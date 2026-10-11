@@ -1,0 +1,1 @@
+{"success":true,"exit_code":0,"output":"Extraction terminee\n  adding: index.html (deflated 81%)\n-rw-r--r-- 1 runner runner 7.7K Oct 11 20:34 ../bmjservice_sources.zip\n7830 ../bmjservice_sources.zip\n","createdFiles":["bmj_export/index.html","bmjservice_sources.zip"]}
