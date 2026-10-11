@@ -1,0 +1,1 @@
+const http = require("http"); const port = process.env.PORT || 3000; const server = http.createServer((req, res) => { res.writeHead(200, {"Content-Type": "text/plain"}); res.end("Meta Agent V1 en ligne"); }); server.listen(port, () => { console.log(`Serveur actif sur le port ${port}`); });

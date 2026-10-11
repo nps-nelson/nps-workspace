@@ -1,0 +1,1 @@
+{"success":false,"exit_code":127,"output":"/tmp/nps_cmd.sh: line 1: railway: command not found\n/tmp/nps_cmd.sh: line 1: railway: command not found\n/tmp/nps_cmd.sh: line 1: railway: command not found\n","createdFiles":["meta-agent-v1/index.js","meta-agent-v1/package.json"]}
