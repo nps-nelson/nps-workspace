@@ -1,0 +1,4363 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#145a86">
+
+    <title>Inscription | BMJ SERVICE</title>
+
+    <link rel="icon"
+          type="image/png"
+          href="images/logo.png">
+
+    <link rel="shortcut icon"
+          href="images/logo.png">
+
+    <link rel="apple-touch-icon"
+          href="images/logo.png">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            font-family: "Poppins", sans-serif;
+
+            background:
+                linear-gradient(
+                    rgba(5, 25, 43, 0.84),
+                    rgba(8, 42, 67, 0.88)
+                ),
+                url("images/banner.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 35px 18px;
+
+            color: #1f2937;
+
+            overflow-x: hidden;
+        }
+
+        /* =========================================================
+           CONTAINER PRINCIPAL
+        ========================================================= */
+
+        .container {
+
+            width: 1180px;
+            max-width: 100%;
+
+            min-height: 700px;
+
+            display: grid;
+
+            grid-template-columns: 0.95fr 1.25fr;
+
+            background: rgba(255,255,255,0.96);
+
+            border-radius: 28px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.35);
+
+            position: relative;
+        }
+
+        /* =========================================================
+           PARTIE GAUCHE
+        ========================================================= */
+
+        .left {
+
+            padding: 60px 50px;
+
+            color: white;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(20,90,134,0.97),
+                    rgba(7,52,83,0.98)
+                );
+        }
+
+        .left::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.06);
+
+            top: -120px;
+            right: -150px;
+        }
+
+        .left::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            background: rgba(212,175,55,0.08);
+
+            bottom: -120px;
+            left: -100px;
+        }
+
+        .brand {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+
+            margin-bottom: 28px;
+        }
+
+        .brand img {
+
+            width: 78px;
+            height: 78px;
+
+            object-fit: contain;
+
+            filter:
+                drop-shadow(
+                    0 8px 20px rgba(0,0,0,0.25)
+                );
+        }
+
+        .brand-name {
+
+            font-size: 24px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+        .brand-subtitle {
+
+            font-size: 12px;
+
+            opacity: 0.75;
+
+            margin-top: 3px;
+
+            letter-spacing: 1.5px;
+        }
+
+        .left h1 {
+
+            position: relative;
+
+            z-index: 2;
+
+            font-size: 42px;
+
+            line-height: 1.2;
+
+            margin-bottom: 20px;
+
+            font-weight: 800;
+        }
+
+        .left h1 span {
+
+            display: block;
+
+            color: #ffd54f;
+        }
+
+        .left-description {
+
+            position: relative;
+
+            z-index: 2;
+
+            font-size: 15px;
+
+            line-height: 1.9;
+
+            color: rgba(255,255,255,0.90);
+
+            margin-bottom: 30px;
+
+            max-width: 470px;
+        }
+
+        .benefits {
+
+            position: relative;
+
+            z-index: 2;
+
+            list-style: none;
+        }
+
+        .benefits li {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            margin: 15px 0;
+
+            font-size: 14px;
+
+            color: rgba(255,255,255,0.95);
+        }
+
+        .benefits i {
+
+            width: 28px;
+            height: 28px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: rgba(255,213,79,0.12);
+
+            color: #ffd54f;
+
+            font-size: 13px;
+        }
+
+        /* =========================================================
+           PARTIE DROITE
+        ========================================================= */
+
+        .right {
+
+            background: #ffffff;
+
+            padding: 45px 48px;
+
+            overflow-y: auto;
+
+            max-height: 900px;
+        }
+
+        .form-header {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+        .form-icon {
+
+            width: 60px;
+            height: 60px;
+
+            margin: 0 auto 14px;
+
+            border-radius: 18px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #145a86,
+                    #0b4d72
+                );
+
+            color: white;
+
+            font-size: 23px;
+
+            box-shadow:
+                0 10px 25px rgba(20,90,134,0.22);
+        }
+
+        .form-header h2 {
+
+            color: #145a86;
+
+            font-size: 29px;
+
+            font-weight: 800;
+
+            margin-bottom: 7px;
+        }
+
+        .form-header p {
+
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+        /* =========================================================
+           FORMULAIRE
+        ========================================================= */
+
+        .form-group {
+
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            color: #334155;
+        }
+
+        .input-wrapper {
+
+            position: relative;
+        }
+
+        .input-wrapper > i {
+
+            position: absolute;
+
+            left: 15px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #145a86;
+
+            font-size: 14px;
+
+            pointer-events: none;
+
+            z-index: 2;
+        }
+
+        .form-group input:not([type="checkbox"]),
+        .form-group select {
+
+            width: 100%;
+
+            height: 50px;
+
+            padding: 0 15px;
+
+            border-radius: 12px;
+
+            border: 1px solid #dbe2ea;
+
+            background: #f8fafc;
+
+            color: #1e293b;
+
+            outline: none;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 13px;
+
+            transition: 0.25s ease;
+        }
+
+        .input-wrapper input {
+
+            padding-left: 43px !important;
+        }
+
+        .form-group select {
+
+            cursor: pointer;
+
+            appearance: auto;
+        }
+
+        .form-group input:not([type="checkbox"]):focus,
+        .form-group select:focus {
+
+            background: white;
+
+            border-color: #145a86;
+
+            box-shadow:
+                0 0 0 4px rgba(20,90,134,0.08);
+        }
+
+        .form-group input::placeholder {
+
+            color: #94a3b8;
+        }
+
+        /* =========================================================
+           LIGNE DEUX COLONNES
+        ========================================================= */
+
+        .row {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+        /* =========================================================
+           PAYS + DRAPEAU
+        ========================================================= */
+
+        .country-row {
+
+            display: grid;
+
+            grid-template-columns: 1fr 58px;
+
+            gap: 10px;
+
+            align-items: center;
+        }
+
+        .flag-box {
+
+            height: 50px;
+
+            border: 1px solid #dbe2ea;
+
+            border-radius: 12px;
+
+            background: #f8fafc;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .flag-box img {
+
+            width: 43px;
+            height: 29px;
+
+            object-fit: cover;
+
+            border-radius: 4px;
+
+            border: 1px solid #cbd5e1;
+        }
+
+        /* =========================================================
+           TELEPHONE
+        ========================================================= */
+
+        .phone-container {
+
+            display: grid;
+
+            grid-template-columns: 100px 1fr;
+
+            gap: 10px;
+        }
+
+        #indicatif {
+
+            text-align: center;
+
+            font-weight: 700;
+
+            background: #eef4f8 !important;
+
+            color: #145a86;
+
+            padding: 0 !important;
+        }
+
+        /* =========================================================
+           PHOTO
+        ========================================================= */
+
+        .photo-area {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 13px;
+
+            border: 1px dashed #cbd5e1;
+
+            border-radius: 13px;
+
+            background: #f8fafc;
+        }
+
+        .photo-preview {
+
+            width: 65px;
+            height: 65px;
+
+            flex: 0 0 65px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 3px solid #145a86;
+
+            background: white;
+        }
+
+        #photo {
+
+            height: auto !important;
+
+            padding: 8px !important;
+
+            border: none !important;
+
+            background: transparent !important;
+
+            box-shadow: none !important;
+        }
+
+        /* =========================================================
+           CONDITIONS
+        ========================================================= */
+
+        .checkbox-group {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 10px;
+
+            padding: 14px;
+
+            border-radius: 12px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e5e7eb;
+        }
+
+        .checkbox-group input {
+
+            width: 18px;
+            height: 18px;
+
+            margin-top: 2px;
+
+            flex: 0 0 18px;
+
+            cursor: pointer;
+
+            accent-color: #145a86;
+        }
+
+        .checkbox-group label {
+
+            margin: 0;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+
+            font-weight: 500;
+
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           BOUTON
+        ========================================================= */
+
+        #btnInscription {
+
+            width: 100%;
+
+            height: 54px;
+
+            border: none;
+
+            border-radius: 13px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #145a86,
+                    #0b4d72
+                );
+
+            color: white;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            transition: 0.25s ease;
+
+            box-shadow:
+                0 10px 24px rgba(20,90,134,0.22);
+        }
+
+        #btnInscription:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 15px 30px rgba(20,90,134,0.28);
+        }
+
+        #btnInscription:disabled {
+
+            opacity: 0.65;
+
+            cursor: not-allowed;
+
+            transform: none;
+
+            box-shadow: none;
+        }
+
+        /* =========================================================
+           CONNEXION
+        ========================================================= */
+
+        .login {
+
+            text-align: center;
+
+            margin-top: 23px;
+
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+        .login a {
+
+            color: #145a86;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            margin-left: 4px;
+        }
+
+        .login a:hover {
+
+            color: #d4af37;
+        }
+
+        /* =========================================================
+           SOCIAL
+        ========================================================= */
+
+        .social {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-top: 23px;
+        }
+
+        .social a {
+
+            width: 38px;
+            height: 38px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #eef4f8;
+
+            color: #145a86;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.25s ease;
+        }
+
+        .social a:hover {
+
+            background: #145a86;
+
+            color: white;
+
+            transform: translateY(-3px);
+        }
+
+        /* =========================================================
+           TOAST
+        ========================================================= */
+
+        #bmjToast {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            width: min(400px, calc(100% - 30px));
+
+            padding: 15px 17px;
+
+            background: white;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.22);
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            z-index: 99999;
+
+            transform:
+                translateY(120px);
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition: 0.3s ease;
+
+            border-left: 4px solid #145a86;
+        }
+
+        #bmjToast.show {
+
+            transform:
+                translateY(0);
+
+            opacity: 1;
+        }
+
+        #bmjToastIcon {
+
+            width: 38px;
+            height: 38px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #e8f4fb;
+
+            color: #145a86;
+
+            flex: 0 0 38px;
+        }
+
+        #bmjToastText {
+
+            font-size: 12px;
+
+            color: #334155;
+
+            line-height: 1.5;
+        }
+
+        /* =========================================================
+           MODAL
+        ========================================================= */
+
+        .modal-overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(2,15,27,0.72);
+
+            backdrop-filter:
+                blur(8px);
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+
+            z-index: 100000;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition: 0.25s ease;
+        }
+
+        .modal-overlay.active {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+        .modal {
+
+            width: 470px;
+
+            max-width: 100%;
+
+            background: white;
+
+            border-radius: 22px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            transform:
+                translateY(25px)
+                scale(0.96);
+
+            transition: 0.25s ease;
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.35);
+        }
+
+        .modal-overlay.active .modal {
+
+            transform:
+                translateY(0)
+                scale(1);
+        }
+
+        .modal-icon {
+
+            width: 65px;
+            height: 65px;
+
+            border-radius: 50%;
+
+            background: #eaf5fb;
+
+            color: #145a86;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            margin: 0 auto 17px;
+
+            font-size: 25px;
+        }
+
+        .modal h3 {
+
+            color: #145a86;
+
+            font-size: 22px;
+
+            margin-bottom: 10px;
+        }
+
+        .modal p {
+
+            color: #64748b;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            margin-bottom: 23px;
+        }
+
+        .modal-actions {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+        }
+
+        .modal-btn {
+
+            height: 47px;
+
+            border: none;
+
+            border-radius: 11px;
+
+            font-family: "Poppins", sans-serif;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+        .modal-cancel {
+
+            background: #f1f5f9;
+
+            color: #475569;
+        }
+
+        .modal-confirm {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #145a86,
+                    #0b4d72
+                );
+
+            color: white;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 950px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .container {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .left {
+
+                display: none;
+            }
+
+            .right {
+
+                max-height: none;
+
+                padding: 40px 35px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+
+                padding: 10px;
+
+                align-items: flex-start;
+            }
+
+            .container {
+
+                border-radius: 18px;
+
+                margin-top: 10px;
+            }
+
+            .right {
+
+                padding: 28px 18px;
+            }
+
+            .form-header h2 {
+
+                font-size: 25px;
+            }
+
+            .row {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+            }
+
+            .country-row {
+
+                grid-template-columns: 1fr 55px;
+            }
+
+            .phone-container {
+
+                grid-template-columns: 90px 1fr;
+            }
+
+            .photo-area {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .modal {
+
+                padding: 24px 18px;
+            }
+        }
+
+        @media (max-width: 380px) {
+
+            .right {
+
+                padding: 24px 14px;
+            }
+
+            .form-group input:not([type="checkbox"]),
+            .form-group select {
+
+                font-size: 12px;
+            }
+
+            .phone-container {
+
+                grid-template-columns: 82px 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- =====================================================
+         GAUCHE
+    ====================================================== -->
+
+    <section class="left">
+
+        <div class="brand">
+
+            <img src="images/logo.png"
+                 alt="Logo BMJ SERVICE">
+
+            <div>
+
+                <div class="brand-name">
+                    BMJ SERVICE
+                </div>
+
+                <div class="brand-subtitle">
+                    APPRENDRE • RÉUSSIR • PROSPÉRER
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <h1>
+
+            Bienvenue sur
+
+            <span>BMJ SERVICE</span>
+
+        </h1>
+
+
+        <p class="left-description">
+
+            Rejoignez notre plateforme de formation
+            professionnelle et développez vos compétences
+            grâce à des formations accessibles partout
+            et à tout moment.
+
+        </p>
+
+
+        <ul class="benefits">
+
+            <li>
+                <i class="fa-solid fa-circle-check"></i>
+                Entrepreneuriat et gestion
+            </li>
+
+            <li>
+                <i class="fa-solid fa-circle-check"></i>
+                Leadership et développement personnel
+            </li>
+
+            <li>
+                <i class="fa-solid fa-circle-check"></i>
+                Marketing Digital
+            </li>
+
+            <li>
+                <i class="fa-solid fa-circle-check"></i>
+                Finance et investissement
+            </li>
+
+            <li>
+                <i class="fa-solid fa-circle-check"></i>
+                Technologie et Intelligence Artificielle
+            </li>
+
+            <li>
+                <i class="fa-solid fa-circle-check"></i>
+                Beauté, Agriculture et autres domaines
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- =====================================================
+         DROITE
+    ====================================================== -->
+
+    <section class="right">
+
+
+        <div class="form-header">
+
+            <div class="form-icon">
+
+                <i class="fa-solid fa-user-plus"></i>
+
+            </div>
+
+            <h2>
+                Créer un compte
+            </h2>
+
+            <p>
+                Remplissez les informations ci-dessous pour
+                rejoindre BMJ SERVICE.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             FORMULAIRE
+        ================================================== -->
+
+        <form id="formInscription"
+              autocomplete="off">
+
+
+            <!-- NOM -->
+
+            <div class="form-group">
+
+                <label for="nom">
+                    Nom complet
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="nom"
+                        name="nom"
+                        placeholder="Entrez votre nom complet"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- SEXE -->
+
+            <div class="form-group">
+
+                <label for="sexe">
+                    Sexe
+                </label>
+
+                <select
+                    id="sexe"
+                    name="sexe"
+                    required
+                >
+
+                    <option value="">
+                        Sélectionner
+                    </option>
+
+                    <option value="Masculin">
+                        Masculin
+                    </option>
+
+                    <option value="Féminin">
+                        Féminin
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PAYS -->
+
+            <div class="form-group">
+
+                <label for="pays">
+                    Pays de résidence
+                </label>
+
+                <div class="country-row">
+
+                    <select
+                        id="pays"
+                        name="pays"
+                        required
+                    >
+
+                        <option value="">
+                            Sélectionnez votre pays
+                        </option>
+
+                    </select>
+
+
+                    <div class="flag-box">
+
+                        <img
+                            id="drapeauPays"
+                            src="https://flagcdn.com/w160/cd.png"
+                            alt="Drapeau du pays"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TELEPHONE -->
+
+            <div class="form-group">
+
+                <label for="telephone">
+                    Numéro de téléphone
+                </label>
+
+                <div class="phone-container">
+
+                    <input
+                        type="text"
+                        id="indicatif"
+                        name="indicatif"
+                        value="+243"
+                        readonly
+                    >
+
+                    <input
+                        type="tel"
+                        id="telephone"
+                        name="telephone"
+                        placeholder="Exemple : 990000000"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- VILLE -->
+
+            <div class="form-group">
+
+                <label for="ville">
+                    Ville
+                </label>
+
+                <select
+                    id="ville"
+                    name="ville"
+                    required
+                >
+
+                    <option value="">
+                        Sélectionnez d'abord un pays
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Adresse Email
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="votreemail@domaine.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- DOMAINE -->
+
+            <div class="form-group">
+
+                <label for="domaine">
+                    Domaine de formation
+                </label>
+
+                <select
+                    id="domaine"
+                    name="domaine"
+                    required
+                >
+
+                    <option value="">
+                        Sélectionner un domaine
+                    </option>
+
+                    <option value="Entrepreneuriat">
+                        Entrepreneuriat
+                    </option>
+
+                    <option value="Leadership">
+                        Leadership
+                    </option>
+
+                    <option value="Marketing Digital">
+                        Marketing Digital
+                    </option>
+
+                    <option value="Finance">
+                        Finance
+                    </option>
+
+                    <option value="Santé et Environnement">
+                        Santé et Environnement
+                    </option>
+
+                    <option value="Éducation">
+                        Éducation
+                    </option>
+
+                    <option value="Informatique">
+                        Informatique
+                    </option>
+
+                    <option value="Management et Management d'Entreprises">
+                        Management et Management d'Entreprises
+                    </option>
+
+                    <option value="Agriculture et Élevage">
+                        Agriculture et Élevage
+                    </option>
+
+                    <option value="Hygiène et Assainissement">
+                        Hygiène et Assainissement
+                    </option>
+
+                    <option value="Technologie et Industrialisation">
+                        Technologie et Industrialisation
+                    </option>
+
+                    <option value="Intelligence Artificielle">
+                        Intelligence Artificielle
+                    </option>
+
+                    <option value="L'Art d'Éloquence et Prise de Parole en Public">
+                        L'Art d'Éloquence et Prise de Parole en Public
+                    </option>
+
+                    <option value="Organisation d'Évènements">
+                        Organisation d'Évènements
+                    </option>
+
+                    <option value="Beauté et Esthétique">
+                        Beauté et Esthétique
+                    </option>
+
+                    <option value="Langues">
+                        Langues
+                    </option>
+
+                    <option value="E-Commerce">
+                        E-Commerce
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- NIVEAU -->
+
+            <div class="form-group">
+
+                <label for="niveau">
+                    Niveau
+                </label>
+
+                <select
+                    id="niveau"
+                    name="niveau"
+                    required
+                >
+
+                    <option value="">
+                        Sélectionner
+                    </option>
+
+                    <option value="Débutant">
+                        Débutant
+                    </option>
+
+                    <option value="Intermédiaire">
+                        Intermédiaire
+                    </option>
+
+                    <option value="Avancé">
+                        Avancé
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- MOT DE PASSE -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Mot de passe
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Minimum 6 caractères"
+                        autocomplete="new-password"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- CONFIRMATION -->
+
+            <div class="form-group">
+
+                <label for="confirmPassword">
+                    Confirmer le mot de passe
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Répétez votre mot de passe"
+                        autocomplete="new-password"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO -->
+
+            <div class="form-group">
+
+                <label for="photo">
+                    Photo de profil
+                    <span style="font-weight:400;color:#94a3b8;">
+                        (optionnelle)
+                    </span>
+                </label>
+
+                <div class="photo-area">
+
+                    <img
+                        id="previewPhoto"
+                        class="photo-preview"
+                        src="images/user.png"
+                        alt="Aperçu"
+                    >
+
+                    <input
+                        type="file"
+                        id="photo"
+                        name="photo"
+                        accept="image/jpeg,image/png,image/webp,image/gif"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- CONDITIONS -->
+
+            <div class="form-group">
+
+                <div class="checkbox-group">
+
+                    <input
+                        type="checkbox"
+                        id="conditions"
+                        name="conditions"
+                        required
+                    >
+
+                    <label for="conditions">
+
+                        J'accepte les conditions d'utilisation
+                        et le règlement de BMJ SERVICE.
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOUTON -->
+
+            <button
+                type="submit"
+                id="btnInscription"
+            >
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                <span>
+                    Valider l'inscription
+                </span>
+
+            </button>
+
+
+        </form>
+
+
+        <!-- =================================================
+             LOGIN
+        ================================================== -->
+
+        <div class="login">
+
+            Vous avez déjà un compte ?
+
+            <a href="connexion.html">
+                Se connecter
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             SOCIAL
+        ================================================== -->
+
+        <div class="social">
+
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div id="bmjToast">
+
+    <div id="bmjToastIcon">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+    </div>
+
+    <div id="bmjToastText">
+        Message BMJ SERVICE
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MODAL CONFIRMATION
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="confirmationModal"
+>
+
+    <div class="modal">
+
+        <div class="modal-icon">
+
+            <i class="fa-solid fa-user-check"></i>
+
+        </div>
+
+        <h3>
+            Confirmer votre inscription
+        </h3>
+
+        <p id="confirmationText">
+
+            Vérifiez vos informations avant
+            de créer votre compte BMJ SERVICE.
+
+        </p>
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="modal-btn modal-cancel"
+                id="cancelRegistration"
+            >
+                Modifier
+            </button>
+
+            <button
+                type="button"
+                class="modal-btn modal-confirm"
+                id="confirmRegistration"
+            >
+                Confirmer
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    "use strict";
+
+
+    /* =========================================================
+       CONFIGURATION SERVEUR
+    ========================================================= */
+
+    const API_BASE =
+        "https://back-end-8i4t.onrender.com";
+
+    const INSCRIPTION_URL =
+        API_BASE + "/api/inscription";
+
+    const CONNEXION_URL =
+        API_BASE + "/api/connexion";
+
+    const HEALTH_URL =
+        API_BASE + "/api/health";
+
+
+    /* =========================================================
+       ELEMENTS
+    ========================================================= */
+
+    const form =
+        document.getElementById("formInscription");
+
+    const nom =
+        document.getElementById("nom");
+
+    const sexe =
+        document.getElementById("sexe");
+
+    const pays =
+        document.getElementById("pays");
+
+    const indicatif =
+        document.getElementById("indicatif");
+
+    const telephone =
+        document.getElementById("telephone");
+
+    const ville =
+        document.getElementById("ville");
+
+    const email =
+        document.getElementById("email");
+
+    const domaine =
+        document.getElementById("domaine");
+
+    const niveau =
+        document.getElementById("niveau");
+
+    const password =
+        document.getElementById("password");
+
+    const confirmPassword =
+        document.getElementById("confirmPassword");
+
+    const photo =
+        document.getElementById("photo");
+
+    const previewPhoto =
+        document.getElementById("previewPhoto");
+
+    const conditions =
+        document.getElementById("conditions");
+
+    const btnInscription =
+        document.getElementById("btnInscription");
+
+    const confirmationModal =
+        document.getElementById("confirmationModal");
+
+    const confirmationText =
+        document.getElementById("confirmationText");
+
+    const cancelRegistration =
+        document.getElementById("cancelRegistration");
+
+    const confirmRegistration =
+        document.getElementById("confirmRegistration");
+
+
+    /* =========================================================
+       VERIFICATION
+    ========================================================= */
+
+    if (!form) {
+
+        console.error(
+            "BMJ SERVICE : #formInscription introuvable."
+        );
+
+        return;
+    }
+
+
+    const requiredElements = [
+
+        nom,
+        sexe,
+        pays,
+        indicatif,
+        telephone,
+        ville,
+        email,
+        domaine,
+        niveau,
+        password,
+        confirmPassword,
+        photo,
+        previewPhoto,
+        conditions,
+        btnInscription,
+        confirmationModal,
+        confirmationText,
+        cancelRegistration,
+        confirmRegistration
+
+    ];
+
+
+    const missingElements =
+        requiredElements.filter(
+            element => !element
+        );
+
+
+    if (missingElements.length > 0) {
+
+        console.error(
+            "BMJ SERVICE : éléments manquants :",
+            missingElements
+        );
+
+        return;
+    }
+
+
+    /* =========================================================
+       PAYS
+    ========================================================= */
+
+    const countries = [
+
+        {
+            name: "République Démocratique du Congo",
+            iso: "cd",
+            code: "+243",
+            cities: [
+                "Kinshasa",
+                "Lubumbashi",
+                "Goma",
+                "Bukavu",
+                "Kolwezi",
+                "Kisangani",
+                "Matadi",
+                "Mbuji-Mayi",
+                "Kananga"
+            ]
+        },
+
+        {
+            name: "Congo-Brazzaville",
+            iso: "cg",
+            code: "+242",
+            cities: [
+                "Brazzaville",
+                "Pointe-Noire",
+                "Dolisie",
+                "Nkayi",
+                "Ouesso"
+            ]
+        },
+
+        {
+            name: "Zambie",
+            iso: "zm",
+            code: "+260",
+            cities: [
+                "Lusaka",
+                "Kitwe",
+                "Ndola",
+                "Livingstone",
+                "Kabwe"
+            ]
+        },
+
+        {
+            name: "Tanzanie",
+            iso: "tz",
+            code: "+255",
+            cities: [
+                "Dar es Salaam",
+                "Dodoma",
+                "Arusha",
+                "Mwanza",
+                "Mbeya"
+            ]
+        },
+
+        {
+            name: "France",
+            iso: "fr",
+            code: "+33",
+            cities: [
+                "Paris",
+                "Marseille",
+                "Lyon",
+                "Toulouse",
+                "Nice"
+            ]
+        },
+
+        {
+            name: "Côte d'Ivoire",
+            iso: "ci",
+            code: "+225",
+            cities: [
+                "Abidjan",
+                "Bouaké",
+                "Yamoussoukro",
+                "Daloa",
+                "Korhogo"
+            ]
+        },
+
+        {
+            name: "Cameroun",
+            iso: "cm",
+            code: "+237",
+            cities: [
+                "Yaoundé",
+                "Douala",
+                "Bafoussam",
+                "Garoua",
+                "Bamenda"
+            ]
+        },
+
+        {
+            name: "Sénégal",
+            iso: "sn",
+            code: "+221",
+            cities: [
+                "Dakar",
+                "Touba",
+                "Thiès",
+                "Saint-Louis",
+                "Kaolack"
+            ]
+        },
+
+        {
+            name: "Gabon",
+            iso: "ga",
+            code: "+241",
+            cities: [
+                "Libreville",
+                "Port-Gentil",
+                "Franceville",
+                "Oyem",
+                "Moanda"
+            ]
+        },
+
+        {
+            name: "Togo",
+            iso: "tg",
+            code: "+228",
+            cities: [
+                "Lomé",
+                "Sokodé",
+                "Kara",
+                "Atakpamé",
+                "Kpalimé"
+            ]
+        },
+
+        {
+            name: "Bénin",
+            iso: "bj",
+            code: "+229",
+            cities: [
+                "Cotonou",
+                "Porto-Novo",
+                "Parakou",
+                "Abomey-Calavi",
+                "Djougou"
+            ]
+        },
+
+        {
+            name: "Mali",
+            iso: "ml",
+            code: "+223",
+            cities: [
+                "Bamako",
+                "Sikasso",
+                "Mopti",
+                "Ségou",
+                "Kayes"
+            ]
+        },
+
+        {
+            name: "Burkina Faso",
+            iso: "bf",
+            code: "+226",
+            cities: [
+                "Ouagadougou",
+                "Bobo-Dioulasso",
+                "Koudougou",
+                "Banfora",
+                "Ouahigouya"
+            ]
+        },
+
+        {
+            name: "Rwanda",
+            iso: "rw",
+            code: "+250",
+            cities: [
+                "Kigali",
+                "Butare",
+                "Gisenyi",
+                "Ruhengeri",
+                "Byumba"
+            ]
+        },
+
+        {
+            name: "Burundi",
+            iso: "bi",
+            code: "+257",
+            cities: [
+                "Bujumbura",
+                "Gitega",
+                "Ngozi",
+                "Muyinga",
+                "Rutana"
+            ]
+        },
+
+        {
+            name: "Belgique",
+            iso: "be",
+            code: "+32",
+            cities: [
+                "Bruxelles",
+                "Anvers",
+                "Gand",
+                "Liège",
+                "Charleroi"
+            ]
+        },
+
+        {
+            name: "Canada",
+            iso: "ca",
+            code: "+1",
+            cities: [
+                "Montréal",
+                "Toronto",
+                "Ottawa",
+                "Vancouver",
+                "Québec"
+            ]
+        },
+
+        {
+            name: "Algérie",
+            iso: "dz",
+            code: "+213",
+            cities: [
+                "Alger",
+                "Oran",
+                "Constantine",
+                "Annaba",
+                "Blida"
+            ]
+        },
+
+        {
+            name: "Maroc",
+            iso: "ma",
+            code: "+212",
+            cities: [
+                "Casablanca",
+                "Rabat",
+                "Marrakech",
+                "Fès",
+                "Tanger"
+            ]
+        },
+
+        {
+            name: "Tunisie",
+            iso: "tn",
+            code: "+216",
+            cities: [
+                "Tunis",
+                "Sfax",
+                "Sousse",
+                "Bizerte",
+                "Gabès"
+            ]
+        },
+
+        {
+            name: "Afrique du Sud",
+            iso: "za",
+            code: "+27",
+            cities: [
+                "Johannesburg",
+                "Cape Town",
+                "Durban",
+                "Pretoria",
+                "Gqeberha"
+            ]
+        },
+
+        {
+            name: "Nigéria",
+            iso: "ng",
+            code: "+234",
+            cities: [
+                "Lagos",
+                "Abuja",
+                "Kano",
+                "Ibadan",
+                "Port Harcourt"
+            ]
+        },
+
+        {
+            name: "Kenya",
+            iso: "ke",
+            code: "+254",
+            cities: [
+                "Nairobi",
+                "Mombasa",
+                "Kisumu",
+                "Nakuru",
+                "Eldoret"
+            ]
+        },
+
+        {
+            name: "Angola",
+            iso: "ao",
+            code: "+244",
+            cities: [
+                "Luanda",
+                "Huambo",
+                "Lobito",
+                "Benguela",
+                "Lubango"
+            ]
+        },
+
+        {
+            name: "Allemagne",
+            iso: "de",
+            code: "+49",
+            cities: [
+                "Berlin",
+                "Hambourg",
+                "Munich",
+                "Cologne",
+                "Francfort"
+            ]
+        },
+
+        {
+            name: "Espagne",
+            iso: "es",
+            code: "+34",
+            cities: [
+                "Madrid",
+                "Barcelone",
+                "Valence",
+                "Séville",
+                "Bilbao"
+            ]
+        },
+
+        {
+            name: "Italie",
+            iso: "it",
+            code: "+39",
+            cities: [
+                "Rome",
+                "Milan",
+                "Naples",
+                "Turin",
+                "Florence"
+            ]
+        },
+
+        {
+            name: "Royaume-Uni",
+            iso: "gb",
+            code: "+44",
+            cities: [
+                "Londres",
+                "Manchester",
+                "Birmingham",
+                "Liverpool",
+                "Glasgow"
+            ]
+        },
+
+        {
+            name: "États-Unis",
+            iso: "us",
+            code: "+1",
+            cities: [
+                "New York",
+                "Los Angeles",
+                "Chicago",
+                "Houston",
+                "Miami"
+            ]
+        },
+
+        {
+            name: "Chine",
+            iso: "cn",
+            code: "+86",
+            cities: [
+                "Pékin",
+                "Shanghai",
+                "Guangzhou",
+                "Shenzhen",
+                "Chengdu"
+            ]
+        },
+
+        {
+            name: "Inde",
+            iso: "in",
+            code: "+91",
+            cities: [
+                "New Delhi",
+                "Mumbai",
+                "Bangalore",
+                "Chennai",
+                "Hyderabad"
+            ]
+        },
+
+        {
+            name: "Brésil",
+            iso: "br",
+            code: "+55",
+            cities: [
+                "São Paulo",
+                "Rio de Janeiro",
+                "Brasília",
+                "Salvador",
+                "Fortaleza"
+            ]
+        }
+
+    ];
+
+
+    /* =========================================================
+       PAYS
+    ========================================================= */
+
+    function populateCountries() {
+
+        pays.innerHTML = "";
+
+        const option =
+            document.createElement("option");
+
+        option.value = "";
+        option.textContent =
+            "Sélectionnez votre pays";
+        option.disabled = true;
+        option.selected = true;
+
+        pays.appendChild(option);
+
+
+        countries.forEach(country => {
+
+            const item =
+                document.createElement("option");
+
+            item.value =
+                country.name;
+
+            item.textContent =
+                country.name;
+
+            item.dataset.iso =
+                country.iso;
+
+            item.dataset.code =
+                country.code;
+
+            pays.appendChild(item);
+
+        });
+
+    }
+
+
+    /* =========================================================
+       VILLES
+    ========================================================= */
+
+    function populateCities(country) {
+
+        ville.innerHTML = "";
+
+
+        if (!country) {
+
+            const option =
+                document.createElement("option");
+
+            option.value = "";
+            option.textContent =
+                "Sélectionnez d'abord un pays";
+            option.disabled = true;
+            option.selected = true;
+
+            ville.appendChild(option);
+
+            return;
+        }
+
+
+        const placeholder =
+            document.createElement("option");
+
+        placeholder.value = "";
+        placeholder.textContent =
+            "Sélectionnez votre ville";
+        placeholder.disabled = true;
+        placeholder.selected = true;
+
+        ville.appendChild(placeholder);
+
+
+        country.cities.forEach(city => {
+
+            const option =
+                document.createElement("option");
+
+            option.value = city;
+            option.textContent = city;
+
+            ville.appendChild(option);
+
+        });
+
+    }
+
+
+    populateCountries();
+
+    populateCities(null);
+
+    indicatif.value = "+243";
+
+
+    /* =========================================================
+       CHANGEMENT DE PAYS
+    ========================================================= */
+
+    pays.addEventListener(
+        "change",
+        function () {
+
+            const country =
+                countries.find(
+                    item =>
+                        item.name === pays.value
+                );
+
+
+            if (!country) {
+
+                indicatif.value = "+243";
+
+                populateCities(null);
+
+                return;
+            }
+
+
+            indicatif.value =
+                country.code;
+
+
+            populateCities(country);
+
+
+            const flag =
+                document.getElementById(
+                    "drapeauPays"
+                );
+
+
+            if (flag) {
+
+                flag.src =
+                    "https://flagcdn.com/w160/" +
+                    country.iso +
+                    ".png";
+
+                flag.alt =
+                    "Drapeau " +
+                    country.name;
+
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       PHOTO
+    ========================================================= */
+
+    photo.addEventListener(
+        "change",
+        function () {
+
+            const file =
+                photo.files &&
+                photo.files[0];
+
+
+            if (!file) {
+
+                previewPhoto.src =
+                    "images/user.png";
+
+                return;
+            }
+
+
+            if (
+                !file.type.startsWith(
+                    "image/"
+                )
+            ) {
+
+                photo.value = "";
+
+                previewPhoto.src =
+                    "images/user.png";
+
+                showToast(
+                    "Veuillez sélectionner une image valide.",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            if (
+                file.size >
+                2 * 1024 * 1024
+            ) {
+
+                photo.value = "";
+
+                previewPhoto.src =
+                    "images/user.png";
+
+                showToast(
+                    "La photo ne doit pas dépasser 2 Mo.",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function (event) {
+
+                    previewPhoto.src =
+                        event.target.result;
+
+                };
+
+
+            reader.onerror =
+                function () {
+
+                    showToast(
+                        "Impossible de lire la photo.",
+                        "error"
+                    );
+
+                };
+
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+
+    /* =========================================================
+       TOAST
+    ========================================================= */
+
+    let toastTimer = null;
+
+
+    function showToast(
+        message,
+        type = "info"
+    ) {
+
+        const toast =
+            document.getElementById(
+                "bmjToast"
+            );
+
+        const icon =
+            document.getElementById(
+                "bmjToastIcon"
+            );
+
+        const text =
+            document.getElementById(
+                "bmjToastText"
+            );
+
+
+        if (!toast || !icon || !text) {
+
+            alert(message);
+
+            return;
+        }
+
+
+        text.textContent =
+            message;
+
+
+        if (type === "success") {
+
+            icon.innerHTML =
+                '<i class="fa-solid fa-circle-check"></i>';
+
+            toast.style.borderLeftColor =
+                "#16a34a";
+
+            icon.style.color =
+                "#16a34a";
+
+            icon.style.background =
+                "#ecfdf5";
+
+        }
+
+        else if (type === "error") {
+
+            icon.innerHTML =
+                '<i class="fa-solid fa-circle-exclamation"></i>';
+
+            toast.style.borderLeftColor =
+                "#dc2626";
+
+            icon.style.color =
+                "#dc2626";
+
+            icon.style.background =
+                "#fef2f2";
+
+        }
+
+        else {
+
+            icon.innerHTML =
+                '<i class="fa-solid fa-circle-info"></i>';
+
+            toast.style.borderLeftColor =
+                "#145a86";
+
+            icon.style.color =
+                "#145a86";
+
+            icon.style.background =
+                "#e8f4fb";
+
+        }
+
+
+        toast.classList.add("show");
+
+
+        clearTimeout(toastTimer);
+
+
+        toastTimer =
+            setTimeout(
+                function () {
+
+                    toast.classList.remove(
+                        "show"
+                    );
+
+                },
+                4500
+            );
+
+    }
+
+
+    /* =========================================================
+       ESCAPE HTML
+    ========================================================= */
+
+    function escapeHtml(value) {
+
+        return String(value ?? "")
+            .replace(
+                /&/g,
+                "&amp;"
+            )
+            .replace(
+                /</g,
+                "&lt;"
+            )
+            .replace(
+                />/g,
+                "&gt;"
+            )
+            .replace(
+                /"/g,
+                "&quot;"
+            )
+            .replace(
+                /'/g,
+                "&#039;"
+            );
+
+    }
+
+
+    /* =========================================================
+       VALIDATION
+    ========================================================= */
+
+    function validateForm() {
+
+        const nameValue =
+            nom.value.trim();
+
+        const emailValue =
+            email.value.trim();
+
+        const phoneValue =
+            telephone.value.trim();
+
+        const passwordValue =
+            password.value;
+
+        const confirmValue =
+            confirmPassword.value;
+
+
+        if (
+            nameValue.length < 2
+        ) {
+
+            showToast(
+                "Veuillez entrer votre nom complet.",
+                "error"
+            );
+
+            nom.focus();
+
+            return false;
+        }
+
+
+        if (!sexe.value) {
+
+            showToast(
+                "Veuillez sélectionner votre sexe.",
+                "error"
+            );
+
+            sexe.focus();
+
+            return false;
+        }
+
+
+        if (!pays.value) {
+
+            showToast(
+                "Veuillez sélectionner votre pays.",
+                "error"
+            );
+
+            pays.focus();
+
+            return false;
+        }
+
+
+        if (!ville.value) {
+
+            showToast(
+                "Veuillez sélectionner votre ville.",
+                "error"
+            );
+
+            ville.focus();
+
+            return false;
+        }
+
+
+        const emailRegex =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if (
+            !emailRegex.test(
+                emailValue
+            )
+        ) {
+
+            showToast(
+                "Veuillez entrer une adresse email valide.",
+                "error"
+            );
+
+            email.focus();
+
+            return false;
+        }
+
+
+        if (
+            phoneValue.length < 6
+        ) {
+
+            showToast(
+                "Veuillez entrer un numéro de téléphone valide.",
+                "error"
+            );
+
+            telephone.focus();
+
+            return false;
+        }
+
+
+        if (!domaine.value) {
+
+            showToast(
+                "Veuillez sélectionner votre domaine de formation.",
+                "error"
+            );
+
+            domaine.focus();
+
+            return false;
+        }
+
+
+        if (!niveau.value) {
+
+            showToast(
+                "Veuillez sélectionner votre niveau.",
+                "error"
+            );
+
+            niveau.focus();
+
+            return false;
+        }
+
+
+        if (
+            passwordValue.length < 6
+        ) {
+
+            showToast(
+                "Le mot de passe doit contenir au moins 6 caractères.",
+                "error"
+            );
+
+            password.focus();
+
+            return false;
+        }
+
+
+        if (
+            passwordValue !==
+            confirmValue
+        ) {
+
+            showToast(
+                "Les deux mots de passe ne correspondent pas.",
+                "error"
+            );
+
+            confirmPassword.focus();
+
+            return false;
+        }
+
+
+        if (
+            !conditions.checked
+        ) {
+
+            showToast(
+                "Vous devez accepter les conditions d'utilisation.",
+                "error"
+            );
+
+            conditions.focus();
+
+            return false;
+        }
+
+
+        return true;
+
+    }
+
+
+    /* =========================================================
+       MODAL
+    ========================================================= */
+
+    function openModal() {
+
+        confirmationText.innerHTML =
+
+            "Vous êtes sur le point de créer votre compte " +
+            "<strong>BMJ SERVICE</strong>.<br><br>" +
+
+            "<strong>Nom :</strong> " +
+            escapeHtml(
+                nom.value.trim()
+            ) +
+
+            "<br>" +
+
+            "<strong>Email :</strong> " +
+            escapeHtml(
+                email.value.trim()
+            ) +
+
+            "<br>" +
+
+            "<strong>Téléphone :</strong> " +
+            escapeHtml(
+                (
+                    indicatif.value.trim() +
+                    " " +
+                    telephone.value.trim()
+                ).trim()
+            ) +
+
+            "<br>" +
+
+            "<strong>Pays :</strong> " +
+            escapeHtml(
+                pays.value
+            ) +
+
+            "<br>" +
+
+            "<strong>Ville :</strong> " +
+            escapeHtml(
+                ville.value
+            ) +
+
+            "<br>" +
+
+            "<strong>Domaine :</strong> " +
+            escapeHtml(
+                domaine.value
+            ) +
+
+            "<br>" +
+
+            "<strong>Niveau :</strong> " +
+            escapeHtml(
+                niveau.value
+            );
+
+
+        confirmationModal.classList.add(
+            "active"
+        );
+
+    }
+
+
+    function closeModal() {
+
+        confirmationModal.classList.remove(
+            "active"
+        );
+
+    }
+
+
+    cancelRegistration.addEventListener(
+        "click",
+        closeModal
+    );
+
+
+    confirmationModal.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target ===
+                confirmationModal
+            ) {
+
+                closeModal();
+
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       PHOTO → BASE64
+    ========================================================= */
+
+    function getPhotoData() {
+
+        return new Promise(
+            function (
+                resolve,
+                reject
+            ) {
+
+                const file =
+                    photo.files &&
+                    photo.files[0];
+
+
+                if (!file) {
+
+                    resolve(null);
+
+                    return;
+                }
+
+
+                if (
+                    file.size >
+                    2 * 1024 * 1024
+                ) {
+
+                    reject(
+                        new Error(
+                            "La photo dépasse la limite de 2 Mo."
+                        )
+                    );
+
+                    return;
+                }
+
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function () {
+
+                        resolve(
+                            reader.result
+                        );
+
+                    };
+
+
+                reader.onerror =
+                    function () {
+
+                        reject(
+                            new Error(
+                                "Impossible de lire la photo."
+                            )
+                        );
+
+                    };
+
+
+                reader.readAsDataURL(file);
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       CREATION DU PAYLOAD
+    ========================================================= */
+
+    function buildRegistrationPayload(
+        photoData
+    ) {
+
+        const fullPhone =
+            (
+                indicatif.value.trim() +
+                " " +
+                telephone.value.trim()
+            ).trim();
+
+
+        /*
+         * IMPORTANT :
+         *
+         * Tous les champs récupérés ici
+         * correspondent maintenant aux champs
+         * attendus par registerUser() côté serveur.
+         */
+
+        return {
+
+            nom:
+                nom.value.trim(),
+
+            sexe:
+                sexe.value.trim(),
+
+            email:
+                email.value
+                    .trim()
+                    .toLowerCase(),
+
+            telephone:
+                fullPhone,
+
+            domaine:
+                domaine.value.trim(),
+
+            pays:
+                pays.value.trim(),
+
+            ville:
+                ville.value.trim(),
+
+            niveau:
+                niveau.value.trim(),
+
+            password:
+                password.value,
+
+            photo:
+                photoData
+
+        };
+
+    }
+
+
+    /* =========================================================
+       CONNEXION DE SECOURS
+       
+       Si l'inscription a créé l'utilisateur mais que
+       la réponse HTTP a été perdue, on tente de se connecter.
+    ========================================================= */
+
+    async function recoverRegistration() {
+
+        console.warn(
+            "BMJ SERVICE : tentative de récupération du compte..."
+        );
+
+
+        const recoveryController =
+            new AbortController();
+
+
+        const recoveryTimeout =
+            setTimeout(
+                function () {
+
+                    recoveryController.abort();
+
+                },
+                15000
+            );
+
+
+        try {
+
+            const response =
+                await fetch(
+                    CONNEXION_URL,
+                    {
+
+                        method: "POST",
+
+                        headers: {
+
+                            "Content-Type":
+                                "application/json",
+
+                            "Accept":
+                                "application/json"
+
+                        },
+
+                        body:
+                            JSON.stringify({
+
+                                email:
+                                    email.value
+                                        .trim()
+                                        .toLowerCase(),
+
+                                password:
+                                    password.value
+
+                            }),
+
+                        signal:
+                            recoveryController.signal
+
+                    }
+                );
+
+
+            const text =
+                await response.text();
+
+
+            let data = {};
+
+
+            if (text.trim()) {
+
+                try {
+
+                    data =
+                        JSON.parse(text);
+
+                }
+
+                catch (_) {
+
+                    data = {
+                        message: text
+                    };
+
+                }
+
+            }
+
+
+            if (
+                response.ok &&
+                data.success !== false &&
+                (
+                    data.user ||
+                    data.utilisateur ||
+                    data.id
+                )
+            ) {
+
+                console.log(
+                    "BMJ SERVICE : compte récupéré avec succès."
+                );
+
+
+                return data;
+
+            }
+
+
+            return null;
+
+        }
+
+        catch (error) {
+
+            console.warn(
+                "BMJ SERVICE : récupération impossible :",
+                error
+            );
+
+            return null;
+
+        }
+
+        finally {
+
+            clearTimeout(
+                recoveryTimeout
+            );
+
+        }
+
+    }
+
+
+    /* =========================================================
+       INSCRIPTION SERVEUR
+    ========================================================= */
+
+    async function registerOnServer() {
+
+        const photoData =
+            await getPhotoData();
+
+
+        const payload =
+            buildRegistrationPayload(
+                photoData
+            );
+
+
+        console.log(
+            "========================================"
+        );
+
+        console.log(
+            "BMJ SERVICE — INSCRIPTION SERVEUR"
+        );
+
+        console.log(
+            "POST :",
+            INSCRIPTION_URL
+        );
+
+        console.log(
+            "Payload :",
+            {
+                ...payload,
+
+                password:
+                    "********",
+
+                photo:
+                    payload.photo
+                        ? "[IMAGE BASE64]"
+                        : null
+            }
+        );
+
+        console.log(
+            "========================================"
+        );
+
+
+        const controller =
+            new AbortController();
+
+
+        const timeout =
+            setTimeout(
+                function () {
+
+                    controller.abort();
+
+                },
+                45000
+            );
+
+
+        let response;
+
+
+        try {
+
+            response =
+                await fetch(
+                    INSCRIPTION_URL,
+                    {
+
+                        method: "POST",
+
+                        headers: {
+
+                            "Content-Type":
+                                "application/json",
+
+                            "Accept":
+                                "application/json"
+
+                        },
+
+                        body:
+                            JSON.stringify(
+                                payload
+                            ),
+
+                        signal:
+                            controller.signal
+
+                    }
+                );
+
+        }
+
+        catch (error) {
+
+            clearTimeout(timeout);
+
+
+            console.error(
+                "BMJ SERVICE — erreur réseau :",
+                error
+            );
+
+
+            /*
+             * IMPORTANT :
+             *
+             * Le serveur peut avoir créé le compte
+             * juste avant que la connexion HTTP
+             * soit interrompue.
+             *
+             * On tente donc une récupération.
+             */
+
+            const recovered =
+                await recoverRegistration();
+
+
+            if (recovered) {
+
+                return recovered;
+
+            }
+
+
+            if (
+                error.name ===
+                "AbortError"
+            ) {
+
+                throw new Error(
+                    "Le serveur BMJ SERVICE met trop de temps à répondre. Le compte n'a pas pu être confirmé."
+                );
+
+            }
+
+
+            throw new Error(
+                "Impossible de communiquer avec le serveur BMJ SERVICE."
+            );
+
+        }
+
+
+        clearTimeout(timeout);
+
+
+        /* =====================================================
+           LIRE LA REPONSE
+        ===================================================== */
+
+        const rawText =
+            await response.text();
+
+
+        let data = {};
+
+
+        if (
+            rawText.trim()
+        ) {
+
+            try {
+
+                data =
+                    JSON.parse(
+                        rawText
+                    );
+
+            }
+
+            catch (error) {
+
+                console.warn(
+                    "BMJ SERVICE — réponse non JSON :",
+                    rawText
+                );
+
+                data = {
+
+                    message:
+                        rawText
+
+                };
+
+            }
+
+        }
+
+
+        console.log(
+            "BMJ SERVICE — réponse :",
+            response.status,
+            data
+        );
+
+
+        /* =====================================================
+           EMAIL EXISTANT
+        ===================================================== */
+
+        if (
+            response.status === 409
+        ) {
+
+            throw new Error(
+                data.message ||
+                "Cette adresse email est déjà utilisée."
+            );
+
+        }
+
+
+        /* =====================================================
+           DONNÉES INVALIDES
+        ===================================================== */
+
+        if (
+            response.status === 400
+        ) {
+
+            throw new Error(
+                data.message ||
+                "Les informations envoyées sont invalides."
+            );
+
+        }
+
+
+        /* =====================================================
+           AUTORISATION
+        ===================================================== */
+
+        if (
+            response.status === 401 ||
+            response.status === 403
+        ) {
+
+            throw new Error(
+                data.message ||
+                "Le serveur refuse cette inscription."
+            );
+
+        }
+
+
+        /* =====================================================
+           ERREUR SERVEUR
+        ===================================================== */
+
+        if (
+            response.status >= 500
+        ) {
+
+            /*
+             * Si le serveur répond réellement 500,
+             * on tente quand même une récupération.
+             *
+             * Cela protège contre le cas :
+             *
+             * INSERT users réussi
+             * puis erreur user_activity.
+             */
+
+            const recovered =
+                await recoverRegistration();
+
+
+            if (recovered) {
+
+                return recovered;
+
+            }
+
+
+            throw new Error(
+                data.message ||
+                "Le serveur BMJ SERVICE a rencontré une erreur interne."
+            );
+
+        }
+
+
+        /* =====================================================
+           AUTRE ERREUR
+        ===================================================== */
+
+        if (
+            !response.ok
+        ) {
+
+            throw new Error(
+                data.message ||
+                "L'inscription n'a pas pu être effectuée."
+            );
+
+        }
+
+
+        /* =====================================================
+           VERIFICATION REPONSE
+        ===================================================== */
+
+        if (
+            data.success === false
+        ) {
+
+            throw new Error(
+                data.message ||
+                "Le serveur a refusé l'inscription."
+            );
+
+        }
+
+
+        /*
+         * Une réponse 200/201 sans success:false
+         * est considérée comme une réussite.
+         */
+
+        return data;
+
+    }
+
+
+    /* =========================================================
+       SAUVEGARDE UTILISATEUR
+    ========================================================= */
+
+    function saveCurrentUser(
+        serverData
+    ) {
+
+        let user =
+            serverData?.user ||
+            serverData?.utilisateur ||
+            null;
+
+
+        /*
+         * Compatibilité :
+         * serveur retournant directement l'utilisateur.
+         */
+
+        if (
+            !user &&
+            serverData?.id
+        ) {
+
+            user =
+                serverData;
+
+        }
+
+
+        /*
+         * Si le serveur ne renvoie pas
+         * l'utilisateur complet, création
+         * d'une copie locale de secours.
+         */
+
+        if (!user) {
+
+            user = {
+
+                nom:
+                    nom.value.trim(),
+
+                sexe:
+                    sexe.value.trim(),
+
+                email:
+                    email.value
+                        .trim()
+                        .toLowerCase(),
+
+                telephone:
+                    (
+                        indicatif.value.trim() +
+                        " " +
+                        telephone.value.trim()
+                    ).trim(),
+
+                domaine:
+                    domaine.value.trim(),
+
+                pays:
+                    pays.value.trim(),
+
+                ville:
+                    ville.value.trim(),
+
+                niveau:
+                    niveau.value.trim(),
+
+                photo:
+                    previewPhoto.src,
+
+                role:
+                    "user",
+
+                premium:
+                    false,
+
+                is_premium:
+                    false,
+
+                blocked:
+                    false,
+
+                is_blocked:
+                    false,
+
+                progression:
+                    0,
+
+                certificats:
+                    0
+
+            };
+
+        }
+
+
+        /* =====================================================
+           NE JAMAIS CONSERVER LE MOT DE PASSE
+        ===================================================== */
+
+        delete user.password;
+        delete user.mot_de_passe;
+        delete user.password_hash;
+
+
+        /* =====================================================
+           COMPATIBILITE BMJ SERVICE
+        ===================================================== */
+
+        user.nom =
+            user.nom ||
+            nom.value.trim();
+
+
+        user.sexe =
+            user.sexe ||
+            sexe.value.trim();
+
+
+        user.email =
+            user.email ||
+            email.value
+                .trim()
+                .toLowerCase();
+
+
+        user.telephone =
+            user.telephone ||
+            (
+                indicatif.value.trim() +
+                " " +
+                telephone.value.trim()
+            ).trim();
+
+
+        user.domaine =
+            user.domaine ||
+            domaine.value.trim();
+
+
+        user.pays =
+            user.pays ||
+            pays.value.trim();
+
+
+        user.ville =
+            user.ville ||
+            ville.value.trim();
+
+
+        user.niveau =
+            user.niveau ||
+            niveau.value.trim();
+
+
+        user.photo =
+            user.photo ||
+            previewPhoto.src;
+
+
+        user.is_premium =
+            Boolean(
+                user.is_premium ||
+                user.premium
+            );
+
+
+        user.is_blocked =
+            Boolean(
+                user.is_blocked ||
+                user.blocked
+            );
+
+
+        user.premium =
+            user.is_premium;
+
+
+        user.blocked =
+            user.is_blocked;
+
+
+        user.role =
+            user.role ||
+            "user";
+
+
+        user.progression =
+            Number(
+                user.progression || 0
+            );
+
+
+        /* =====================================================
+           SAUVEGARDE SESSION
+        ===================================================== */
+
+        try {
+
+            localStorage.setItem(
+                "bmj_current_user",
+                JSON.stringify(user)
+            );
+
+            console.log(
+                "BMJ SERVICE : utilisateur sauvegardé."
+            );
+
+        }
+
+        catch (error) {
+
+            console.warn(
+                "Impossible de sauvegarder bmj_current_user.",
+                error
+            );
+
+        }
+
+
+        /* =====================================================
+           LISTE LOCALE
+        ===================================================== */
+
+        try {
+
+            const oldList =
+                JSON.parse(
+                    localStorage.getItem(
+                        "bmj_users_list"
+                    ) || "[]"
+                );
+
+
+            if (
+                Array.isArray(oldList)
+            ) {
+
+                const index =
+                    oldList.findIndex(
+                        item =>
+                            String(
+                                item.email || ""
+                            )
+                            .toLowerCase()
+                            ===
+                            String(
+                                user.email || ""
+                            )
+                            .toLowerCase()
+                    );
+
+
+                if (
+                    index >= 0
+                ) {
+
+                    oldList[index] =
+                        user;
+
+                }
+
+                else {
+
+                    oldList.push(
+                        user
+                    );
+
+                }
+
+
+                localStorage.setItem(
+                    "bmj_users_list",
+                    JSON.stringify(
+                        oldList
+                    )
+                );
+
+            }
+
+        }
+
+        catch (error) {
+
+            console.warn(
+                "Impossible de mettre à jour bmj_users_list.",
+                error
+            );
+
+        }
+
+
+        return user;
+
+    }
+
+
+    /* =========================================================
+       SUBMIT
+    ========================================================= */
+
+    form.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+
+            if (
+                !validateForm()
+            ) {
+
+                return;
+
+            }
+
+
+            openModal();
+
+        }
+    );
+
+
+    /* =========================================================
+       CONFIRMATION
+    ========================================================= */
+
+    confirmRegistration.addEventListener(
+        "click",
+        async function () {
+
+            closeModal();
+
+
+            if (
+                btnInscription.disabled
+            ) {
+
+                return;
+
+            }
+
+
+            btnInscription.disabled =
+                true;
+
+
+            const oldButtonHTML =
+                btnInscription.innerHTML;
+
+
+            btnInscription.innerHTML =
+
+                '<i class="fa-solid fa-spinner fa-spin"></i>' +
+                '<span>Création du compte...</span>';
+
+
+            showToast(
+                "Connexion au serveur BMJ SERVICE...",
+                "info"
+            );
+
+
+            try {
+
+                /*
+                 * INSCRIPTION RÉELLE
+                 */
+
+                const result =
+                    await registerOnServer();
+
+
+                /*
+                 * SAUVEGARDE LOCALE
+                 */
+
+                const user =
+                    saveCurrentUser(
+                        result
+                    );
+
+
+                console.log(
+                    "BMJ SERVICE — compte créé :",
+                    user
+                );
+
+
+                showToast(
+                    "Inscription réussie. Redirection vers votre espace...",
+                    "success"
+                );
+
+
+                setTimeout(
+                    function () {
+
+                        window.location.replace(
+                            "dashboard.html"
+                        );
+
+                    },
+                    900
+                );
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "BMJ SERVICE — inscription échouée :",
+                    error
+                );
+
+
+                showToast(
+                    error.message ||
+                    "Impossible de terminer l'inscription.",
+                    "error"
+                );
+
+
+                btnInscription.disabled =
+                    false;
+
+
+                btnInscription.innerHTML =
+                    oldButtonHTML;
+
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       CONFIRMATION MOT DE PASSE
+    ========================================================= */
+
+    function checkPasswords() {
+
+        if (
+            !confirmPassword.value
+        ) {
+
+            confirmPassword.style.borderColor =
+                "";
+
+            return;
+
+        }
+
+
+        if (
+            password.value ===
+            confirmPassword.value
+        ) {
+
+            confirmPassword.style.borderColor =
+                "#16a34a";
+
+        }
+
+        else {
+
+            confirmPassword.style.borderColor =
+                "#dc2626";
+
+        }
+
+    }
+
+
+    confirmPassword.addEventListener(
+        "input",
+        checkPasswords
+    );
+
+
+    password.addEventListener(
+        "input",
+        checkPasswords
+    );
+
+
+    /* =========================================================
+       TELEPHONE
+    ========================================================= */
+
+    telephone.addEventListener(
+        "input",
+        function () {
+
+            telephone.value =
+                telephone.value.replace(
+                    /[^0-9\s\-()]/g,
+                    ""
+                );
+
+        }
+    );
+
+
+    /* =========================================================
+       EMAIL
+    ========================================================= */
+
+    email.addEventListener(
+        "blur",
+        function () {
+
+            email.value =
+                email.value
+                    .trim()
+                    .toLowerCase();
+
+        }
+    );
+
+
+    /* =========================================================
+       TEST SERVEUR
+    ========================================================= */
+
+    async function testServer() {
+
+        const controller =
+            new AbortController();
+
+
+        const timeout =
+            setTimeout(
+                function () {
+
+                    controller.abort();
+
+                },
+                15000
+            );
+
+
+        try {
+
+            const response =
+                await fetch(
+                    HEALTH_URL,
+                    {
+
+                        method: "GET",
+
+                        headers: {
+
+                            "Accept":
+                                "application/json"
+
+                        },
+
+                        signal:
+                            controller.signal
+
+                    }
+                );
+
+
+            const text =
+                await response.text();
+
+
+            let data = {};
+
+
+            try {
+
+                data =
+                    text
+                        ? JSON.parse(text)
+                        : {};
+
+            }
+
+            catch (_) {
+
+                data = {
+
+                    raw:
+                        text
+
+                };
+
+            }
+
+
+            console.log(
+                "BMJ SERVICE — HEALTH :",
+                response.status,
+                data
+            );
+
+
+            if (
+                response.ok
+            ) {
+
+                console.log(
+                    "BMJ SERVICE : API accessible."
+                );
+
+            }
+
+            else {
+
+                console.warn(
+                    "BMJ SERVICE : API répond avec une erreur."
+                );
+
+            }
+
+        }
+
+        catch (error) {
+
+            console.warn(
+                "BMJ SERVICE — health check impossible :",
+                error
+            );
+
+        }
+
+        finally {
+
+            clearTimeout(
+                timeout
+            );
+
+        }
+
+    }
+
+
+    /* =========================================================
+       TEST AU CHARGEMENT
+    ========================================================= */
+
+    testServer();
+
+
+    /* =========================================================
+       DEBUG
+    ========================================================= */
+
+    console.log(
+        "========================================"
+    );
+
+    console.log(
+        "BMJ SERVICE — INSCRIPTION INITIALISÉE"
+    );
+
+    console.log(
+        "API :",
+        API_BASE
+    );
+
+    console.log(
+        "INSCRIPTION :",
+        INSCRIPTION_URL
+    );
+
+    console.log(
+        "CONNEXION :",
+        CONNEXION_URL
+    );
+
+    console.log(
+        "========================================"
+    );
+
+});
+</script>
+
+
+</body>
+
+</html>

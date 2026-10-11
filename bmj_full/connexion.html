@@ -1,0 +1,2817 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Connexion à BMJ SERVICE"
+    >
+
+    <title>Connexion - BMJ SERVICE</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="images/logo.png"
+    >
+
+    <link
+        rel="shortcut icon"
+        href="images/logo.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="images/logo.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+
+        html {
+            width: 100%;
+            min-height: 100%;
+        }
+
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+
+            overflow-x: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(8, 30, 52, 0.82),
+                    rgba(8, 30, 52, 0.82)
+                ),
+                url("images/login-bg.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ====================================================== */
+
+        .container {
+            width: 1100px;
+            max-width: 100%;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            overflow: hidden;
+
+            border-radius: 25px;
+
+            background: rgba(255, 255, 255, 0.12);
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.40);
+        }
+
+
+        /* =====================================================
+           GAUCHE
+        ====================================================== */
+
+        .left {
+            padding: 60px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            color: white;
+        }
+
+
+        .logo {
+            width: 90px;
+            height: 90px;
+
+            object-fit: contain;
+
+            margin-bottom: 25px;
+        }
+
+
+        .left h1 {
+            font-size: 40px;
+            line-height: 1.25;
+
+            margin-bottom: 20px;
+        }
+
+
+        .left h1 span {
+            color: #FFD54F;
+        }
+
+
+        .left p {
+            font-size: 16px;
+            line-height: 1.8;
+
+            opacity: 0.95;
+
+            margin-bottom: 30px;
+        }
+
+
+        .left ul {
+            list-style: none;
+        }
+
+
+        .left ul li {
+            display: flex;
+            align-items: center;
+
+            margin: 17px 0;
+
+            font-size: 15px;
+        }
+
+
+        .left ul li i {
+            color: #FFD54F;
+
+            font-size: 18px;
+
+            margin-right: 12px;
+
+            flex-shrink: 0;
+        }
+
+
+        /* =====================================================
+           DROITE
+        ====================================================== */
+
+        .right {
+            min-width: 0;
+
+            padding: 50px;
+
+            background: #ffffff;
+        }
+
+
+        .right h2 {
+            color: #145A86;
+
+            text-align: center;
+
+            font-size: 34px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .subtitle {
+            color: #666;
+
+            text-align: center;
+
+            font-size: 14px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =====================================================
+           MESSAGE
+        ====================================================== */
+
+        #message {
+            display: none;
+
+            width: 100%;
+
+            padding: 13px 15px;
+
+            margin-bottom: 20px;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            word-break: break-word;
+        }
+
+
+        #message.success {
+            display: block;
+
+            color: #16713b;
+
+            background: #e8f7ee;
+
+            border: 1px solid #a9dfbd;
+        }
+
+
+        #message.error {
+            display: block;
+
+            color: #b42318;
+
+            background: #fff0f0;
+
+            border: 1px solid #f2b8b5;
+        }
+
+
+        #message.info {
+            display: block;
+
+            color: #145A86;
+
+            background: #eef6ff;
+
+            border: 1px solid #bdd7f0;
+        }
+
+
+        /* =====================================================
+           FORMULAIRE
+        ====================================================== */
+
+        .form-group {
+            width: 100%;
+
+            margin-bottom: 20px;
+        }
+
+
+        .form-group label {
+            display: block;
+
+            color: #333;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            margin-bottom: 8px;
+        }
+
+
+        .input-box {
+            position: relative;
+
+            width: 100%;
+        }
+
+
+        .input-box > .left-icon {
+            position: absolute;
+
+            left: 15px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #145A86;
+
+            font-size: 16px;
+
+            pointer-events: none;
+
+            z-index: 2;
+        }
+
+
+        .form-group input {
+            width: 100%;
+
+            height: 52px;
+
+            padding: 0 48px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 12px;
+
+            outline: none;
+
+            color: #222;
+
+            background: #fff;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+
+        .form-group input:focus {
+            border-color: #145A86;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(20, 90, 134, 0.10);
+        }
+
+
+        .form-group input::placeholder {
+            color: #aaa;
+        }
+
+
+        /* =====================================================
+           PASSWORD
+        ====================================================== */
+
+        .password-toggle {
+            position: absolute;
+
+            top: 50%;
+            right: 12px;
+
+            width: 36px;
+            height: 36px;
+
+            transform: translateY(-50%);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0;
+
+            border: none;
+
+            background: transparent;
+
+            color: #777;
+
+            cursor: pointer;
+
+            border-radius: 8px;
+        }
+
+
+        .password-toggle:hover {
+            color: #145A86;
+
+            background: #f1f6f9;
+        }
+
+
+        .password-toggle:focus {
+            outline: 2px solid rgba(20, 90, 134, 0.20);
+        }
+
+
+        /* =====================================================
+           OPTIONS
+        ====================================================== */
+
+        .options {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 25px;
+
+            font-size: 13px;
+        }
+
+
+        .remember {
+            display: flex;
+            align-items: center;
+
+            gap: 8px;
+
+            color: #555;
+
+            cursor: pointer;
+        }
+
+
+        .remember input {
+            width: 16px;
+            height: 16px;
+
+            cursor: pointer;
+        }
+
+
+        .options a {
+            color: #145A86;
+
+            font-weight: 600;
+
+            text-decoration: none;
+        }
+
+
+        .options a:hover {
+            color: #d6a900;
+        }
+
+
+        /* =====================================================
+           BOUTON
+        ====================================================== */
+
+        #btnConnexion {
+            width: 100%;
+
+            min-height: 52px;
+
+            padding: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #145A86,
+                    #0b4d72
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 8px 20px
+                rgba(20, 90, 134, 0.20);
+        }
+
+
+        #btnConnexion:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 25px
+                rgba(20, 90, 134, 0.30);
+        }
+
+
+        #btnConnexion:active {
+            transform: translateY(0);
+        }
+
+
+        #btnConnexion:disabled {
+            opacity: 0.65;
+
+            cursor: not-allowed;
+
+            transform: none;
+
+            box-shadow: none;
+        }
+
+
+        #btnConnexion i {
+            margin-right: 8px;
+        }
+
+
+        /* =====================================================
+           SPINNER
+        ====================================================== */
+
+        .spinner {
+            width: 17px;
+            height: 17px;
+
+            display: inline-block;
+
+            border: 2px solid rgba(255,255,255,0.4);
+
+            border-top-color: #fff;
+
+            border-radius: 50%;
+
+            animation: spin 0.7s linear infinite;
+
+            margin-right: 9px;
+        }
+
+
+        @keyframes spin {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* =====================================================
+           INSCRIPTION
+        ====================================================== */
+
+        .signup {
+            margin-top: 28px;
+
+            color: #555;
+
+            text-align: center;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        .signup a {
+            color: #145A86;
+
+            font-weight: 700;
+
+            text-decoration: none;
+        }
+
+
+        .signup a:hover {
+            color: #d6a900;
+        }
+
+
+        /* =====================================================
+           RESEAUX
+        ====================================================== */
+
+        .social {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-top: 25px;
+        }
+
+
+        .social a {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #145A86;
+
+            color: white;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+
+        .social a:hover {
+            background: #FFD54F;
+
+            color: #145A86;
+
+            transform: translateY(-4px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .footer {
+            margin-top: 25px;
+
+            color: #888;
+
+            text-align: center;
+
+            font-size: 11px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           TABLETTE
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            body {
+                padding: 20px;
+            }
+
+
+            .container {
+                grid-template-columns: 1fr;
+
+                max-width: 600px;
+            }
+
+
+            .left {
+                display: none;
+            }
+
+
+            .right {
+                padding: 45px;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 12px;
+
+                background-attachment: scroll;
+            }
+
+
+            .container {
+                width: 100%;
+
+                border-radius: 18px;
+            }
+
+
+            .right {
+                padding: 30px 22px;
+            }
+
+
+            .right h2 {
+                font-size: 28px;
+            }
+
+
+            .subtitle {
+                font-size: 13px;
+            }
+
+
+            .options {
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+
+            .options a {
+                align-self: flex-end;
+            }
+        }
+
+
+        /* =====================================================
+           PETIT MOBILE
+        ====================================================== */
+
+        @media (max-width: 380px) {
+
+            .right {
+                padding: 25px 18px;
+            }
+
+
+            .right h2 {
+                font-size: 25px;
+            }
+
+
+            .form-group input {
+                height: 49px;
+
+                font-size: 14px;
+            }
+
+
+            .options {
+                font-size: 12px;
+            }
+
+
+            .social a {
+                width: 39px;
+                height: 39px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CONTAINER PRINCIPAL
+    ====================================================== -->
+
+    <main class="container">
+
+
+        <!-- =================================================
+             PARTIE GAUCHE
+        ================================================== -->
+
+        <section class="left">
+
+            <img
+                class="logo"
+                src="images/logo.png"
+                alt="Logo BMJ SERVICE"
+            >
+
+
+            <h1>
+
+                Heureux de vous revoir sur
+
+                <span>
+                    BMJ SERVICE
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Connectez-vous à votre espace personnel afin
+                de poursuivre vos formations professionnelles,
+                suivre votre progression, télécharger vos
+                certificats et développer vos compétences.
+
+            </p>
+
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Formations professionnelles certifiantes
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Accessible sur ordinateur et téléphone
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Suivi de votre progression
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Certificat après réussite
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Assistance disponible 24h/24
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- =================================================
+             PARTIE DROITE
+        ================================================== -->
+
+        <section class="right">
+
+
+            <h2>
+                Connexion
+            </h2>
+
+
+            <p class="subtitle">
+                Connectez-vous à votre compte BMJ SERVICE.
+            </p>
+
+
+            <!-- =================================================
+                 MESSAGE
+            ================================================== -->
+
+            <div
+                id="message"
+                role="alert"
+                aria-live="polite"
+            ></div>
+
+
+            <!-- =================================================
+                 FORMULAIRE
+            ================================================== -->
+
+            <form
+                id="loginForm"
+                autocomplete="on"
+                novalidate
+            >
+
+
+                <!-- =============================================
+                     EMAIL
+                ============================================== -->
+
+                <div class="form-group">
+
+                    <label for="identifiant">
+                        Adresse e-mail
+                    </label>
+
+
+                    <div class="input-box">
+
+                        <i
+                            class="fa-solid fa-envelope left-icon"
+                        ></i>
+
+
+                        <input
+                            type="email"
+                            id="identifiant"
+                            name="email"
+                            placeholder="Votre adresse e-mail"
+                            autocomplete="username"
+                            autocapitalize="none"
+                            spellcheck="false"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- =============================================
+                     MOT DE PASSE
+                ============================================== -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Mot de passe
+                    </label>
+
+
+                    <div class="input-box">
+
+                        <i
+                            class="fa-solid fa-lock left-icon"
+                        ></i>
+
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Votre mot de passe"
+                            autocomplete="current-password"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                            aria-label="Afficher le mot de passe"
+                        >
+
+                            <i
+                                class="fa-solid fa-eye"
+                                id="passwordIcon"
+                            ></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =============================================
+                     OPTIONS
+                ============================================== -->
+
+                <div class="options">
+
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="remember"
+                            name="remember"
+                        >
+
+                        <span>
+                            Se souvenir de moi
+                        </span>
+
+                    </label>
+
+
+                    <a
+                        href="motdepasse-oublie.html"
+                    >
+                        Mot de passe oublié ?
+                    </a>
+
+
+                </div>
+
+
+                <!-- =============================================
+                     BOUTON
+                ============================================== -->
+
+                <button
+                    type="submit"
+                    id="btnConnexion"
+                >
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    <span id="buttonText">
+                        Se connecter
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+            <!-- =================================================
+                 INSCRIPTION
+            ================================================== -->
+
+            <div class="signup">
+
+                Vous n'avez pas encore de compte ?
+
+                <br>
+
+                <a href="inscription.html">
+                    Créer un compte gratuitement
+                </a>
+
+            </div>
+
+
+            <!-- =================================================
+                 RESEAUX SOCIAUX
+            ================================================== -->
+
+            <div class="social">
+
+
+                <a
+                    href="#"
+                    aria-label="Facebook"
+                    onclick="return false;"
+                >
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+
+                <a
+                    href="#"
+                    aria-label="WhatsApp"
+                    onclick="return false;"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+
+                <a
+                    href="#"
+                    aria-label="LinkedIn"
+                    onclick="return false;"
+                >
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+
+                <a
+                    href="#"
+                    aria-label="YouTube"
+                    onclick="return false;"
+                >
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+
+            <div class="footer">
+
+                © 2026 BMJ SERVICE
+
+                <br>
+
+                Plateforme de formation professionnelle.
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        "use strict";
+
+
+        /* =====================================================
+           CONFIGURATION
+        ====================================================== */
+
+        const API_BASE =
+            "https://back-end-8i4t.onrender.com";
+
+
+        const CONNEXION_URL =
+            API_BASE + "/api/connexion";
+
+
+        const DASHBOARD_URL =
+            "dashboard.html";
+
+
+        /* =====================================================
+           ELEMENTS
+        ====================================================== */
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+
+        const identifiant =
+            document.getElementById("identifiant");
+
+
+        const password =
+            document.getElementById("password");
+
+
+        const remember =
+            document.getElementById("remember");
+
+
+        const btnConnexion =
+            document.getElementById("btnConnexion");
+
+
+        const message =
+            document.getElementById("message");
+
+
+        const passwordToggle =
+            document.getElementById("passwordToggle");
+
+
+        const passwordIcon =
+            document.getElementById("passwordIcon");
+
+
+        /* =====================================================
+           ETAT
+        ====================================================== */
+
+        let connexionEnCours = false;
+
+
+        /* =====================================================
+           MESSAGE
+        ====================================================== */
+
+        function afficherMessage(
+            texte,
+            type = "error"
+        ) {
+
+            if (!message) {
+                return;
+            }
+
+
+            message.textContent =
+                texte || "";
+
+
+            message.className =
+                type;
+
+
+            message.style.display =
+                "block";
+        }
+
+
+        function cacherMessage() {
+
+            if (!message) {
+                return;
+            }
+
+
+            message.textContent =
+                "";
+
+
+            message.className =
+                "";
+
+
+            message.style.display =
+                "none";
+        }
+
+
+        /* =====================================================
+           BOOLEAN
+        ====================================================== */
+
+        function convertirBoolean(value) {
+
+            return (
+                value === true ||
+                value === 1 ||
+                value === "1" ||
+                value === "true" ||
+                value === "TRUE" ||
+                value === "yes" ||
+                value === "oui"
+            );
+        }
+    /* =====================================================
+       NORMALISER UTILISATEUR
+    ====================================================== */
+
+    function normaliserUtilisateur(
+        utilisateur
+    ) {
+
+        if (
+            !utilisateur ||
+            typeof utilisateur !== "object"
+        ) {
+
+            return null;
+        }
+
+
+        let source =
+            utilisateur;
+
+
+        if (
+            source.user &&
+            typeof source.user === "object"
+        ) {
+
+            source =
+                source.user;
+        }
+
+
+        if (
+            source.utilisateur &&
+            typeof source.utilisateur === "object"
+        ) {
+
+            source =
+                source.utilisateur;
+        }
+
+
+        /* =================================================
+           CREATION OBJET UTILISATEUR
+        ================================================== */
+
+        const user = {
+            ...source
+        };
+
+
+        /* =================================================
+           IDENTIFIANT
+        ================================================== */
+
+        user.id =
+            source.id ??
+            source.user_id ??
+            source.userId ??
+            source.id_utilisateur ??
+            null;
+
+
+        /* =================================================
+           ID BMJ
+        ================================================== */
+
+        user.id_bmj =
+            source.id_bmj ??
+            source.idBMJ ??
+            source.bmj_id ??
+            source.bmjId ??
+            "";
+
+
+        /* =================================================
+           NOM
+        ================================================== */
+
+        user.nom =
+            source.nom ??
+            source.name ??
+            source.username ??
+            "";
+
+
+        /* =================================================
+           EMAIL
+        ================================================== */
+
+        user.email =
+            source.email ??
+            "";
+
+
+        /* =================================================
+           TELEPHONE
+        ================================================== */
+
+        user.telephone =
+            source.telephone ??
+            source.phone ??
+            "";
+
+
+        /* =================================================
+           SEXE
+        ================================================== */
+
+        user.sexe =
+            source.sexe ??
+            "";
+
+
+        /* =================================================
+           PAYS
+        ================================================== */
+
+        user.pays =
+            source.pays ??
+            "";
+
+
+        /* =================================================
+           VILLE
+        ================================================== */
+
+        user.ville =
+            source.ville ??
+            "";
+
+
+        /* =================================================
+           DOMAINE
+        ================================================== */
+
+        user.domaine =
+            source.domaine ??
+            source.domain ??
+            "";
+
+
+        /* =================================================
+           NIVEAU
+        ================================================== */
+
+        user.niveau =
+            source.niveau ??
+            "";
+
+
+        /* =================================================
+           PHOTO
+        ================================================== */
+
+        user.photo =
+            source.photo ??
+            source.avatar ??
+            source.image ??
+            "images/user.png";
+
+
+        /* =================================================
+           PROGRESSION
+        ================================================== */
+
+        user.progression =
+            Number(
+                source.progression ??
+                source.progress ??
+                0
+            );
+
+
+        if (
+            !Number.isFinite(
+                user.progression
+            )
+        ) {
+
+            user.progression =
+                0;
+        }
+
+
+        if (
+            user.progression < 0
+        ) {
+
+            user.progression =
+                0;
+        }
+
+
+        if (
+            user.progression > 100
+        ) {
+
+            user.progression =
+                100;
+        }
+
+
+        /* =================================================
+           PROGRESSIONS PAR DOMAINE
+        ================================================== */
+
+        user.progressions =
+            source.progressions &&
+            typeof source.progressions === "object"
+
+                ? source.progressions
+
+                : {};
+
+
+        /* =================================================
+           PREMIUM
+        ================================================== */
+
+        user.is_premium =
+            convertirBoolean(
+                source.is_premium
+            );
+
+
+        user.premium =
+            convertirBoolean(
+                source.premium
+            );
+
+
+        user.premium_until =
+            source.premium_until ??
+            null;
+
+
+        /* =================================================
+           VERIFICATION DATE PREMIUM
+        ================================================== */
+
+        if (
+            user.premium_until
+        ) {
+
+            const premiumDate =
+                new Date(
+                    user.premium_until
+                );
+
+
+            if (
+                !Number.isNaN(
+                    premiumDate.getTime()
+                )
+            ) {
+
+                if (
+                    premiumDate >
+                    new Date()
+                ) {
+
+                    user.premium =
+                        true;
+
+                    user.is_premium =
+                        true;
+
+                } else {
+
+                    user.premium =
+                        false;
+
+                    user.is_premium =
+                        false;
+                }
+            }
+        }
+
+
+        /* =================================================
+           ETAT PREMIUM FINAL
+        ================================================== */
+
+        user.isPremium =
+            user.premium ||
+            user.is_premium;
+
+
+        user.premium =
+            user.isPremium;
+
+
+        user.is_premium =
+            user.isPremium;
+
+
+        /* =================================================
+           COMPTE BLOQUE
+        ================================================== */
+
+        user.is_blocked =
+            convertirBoolean(
+                source.is_blocked
+            );
+
+
+        user.blocked =
+            convertirBoolean(
+                source.blocked
+            );
+
+
+        /* =================================================
+           CERTIFICAT
+        ================================================== */
+
+        user.certificat_autorise =
+            convertirBoolean(
+                source.certificat_autorise
+            );
+
+
+        user.certificat_obtenu =
+            convertirBoolean(
+                source.certificat_obtenu
+            );
+
+
+        /* =================================================
+           TOKEN
+        ================================================== */
+
+        user.token =
+            source.token ??
+            source.access_token ??
+            null;
+
+
+        /* =================================================
+           DATES
+        ================================================== */
+
+        user.created_at =
+            source.created_at ??
+            null;
+
+
+        user.updated_at =
+            source.updated_at ??
+            null;
+
+
+        user.last_login =
+            source.last_login ??
+            null;
+
+
+        /* =================================================
+           NOTES ADMIN
+        ================================================== */
+
+        user.notes_admin =
+            source.notes_admin ??
+            "";
+
+
+        return user;
+    }
+
+
+    /* =====================================================
+       SUPPRIMER LES INFORMATIONS SENSIBLES
+    ====================================================== */
+
+    function nettoyerUtilisateur(
+        utilisateur
+    ) {
+
+        if (
+            !utilisateur ||
+            typeof utilisateur !== "object"
+        ) {
+
+            return null;
+        }
+
+
+        const user = {
+            ...utilisateur
+        };
+
+
+        delete user.password;
+
+        delete user.password_hash;
+
+        delete user.mot_de_passe;
+
+        delete user.confirmPassword;
+
+        delete user.confirm_password;
+
+
+        return user;
+    }
+
+
+    /* =====================================================
+       CREER SESSION BMJ
+    ====================================================== */
+
+    function creerSessionBMJ(
+        utilisateur
+    ) {
+
+        const utilisateurNormalise =
+            normaliserUtilisateur(
+                utilisateur
+            );
+
+
+        if (
+            !utilisateurNormalise
+        ) {
+
+            return false;
+        }
+
+
+        const user =
+            nettoyerUtilisateur(
+                utilisateurNormalise
+            );
+
+
+        if (!user) {
+
+            return false;
+        }
+
+
+        const session = {
+
+            authenticated: true,
+
+            connected: true,
+
+            user: user,
+
+            id: user.id,
+
+            id_bmj: user.id_bmj,
+
+            nom: user.nom,
+
+            email: user.email,
+
+            telephone: user.telephone,
+
+            sexe: user.sexe,
+
+            pays: user.pays,
+
+            ville: user.ville,
+
+            domaine: user.domaine,
+
+            niveau: user.niveau,
+
+            photo: user.photo,
+
+            premium: user.premium,
+
+            is_premium: user.is_premium,
+
+            premium_until:
+                user.premium_until,
+
+            progression:
+                user.progression,
+
+            progressions:
+                user.progressions,
+
+            certificat_autorise:
+                user.certificat_autorise,
+
+            certificat_obtenu:
+                user.certificat_obtenu,
+
+            login_at:
+                new Date().toISOString()
+        };
+
+
+        try {
+
+            /* =============================================
+               SESSION PRINCIPALE
+            ============================================== */
+
+            localStorage.setItem(
+                "bmj_session",
+                JSON.stringify(session)
+            );
+
+
+            /* =============================================
+               UTILISATEUR PRINCIPAL
+            ============================================== */
+
+            localStorage.setItem(
+                "bmj_current_user",
+                JSON.stringify(user)
+            );
+
+
+            /* =============================================
+               COMPATIBILITE
+            ============================================== */
+
+            localStorage.setItem(
+                "bmj_user",
+                JSON.stringify(user)
+            );
+
+
+            localStorage.setItem(
+                "currentUser",
+                JSON.stringify(user)
+            );
+
+
+            localStorage.setItem(
+                "user",
+                JSON.stringify(user)
+            );
+
+
+            /* =============================================
+               ID UTILISATEUR
+            ============================================== */
+
+            if (
+                user.id !== null &&
+                user.id !== undefined &&
+                user.id !== ""
+            ) {
+
+                localStorage.setItem(
+                    "bmj_user_id",
+                    String(user.id)
+                );
+            }
+
+
+            /* =============================================
+               TOKEN SI LE SERVEUR EN RETOURNE UN
+            ============================================== */
+
+            if (
+                user.token &&
+                typeof user.token === "string"
+            ) {
+
+                localStorage.setItem(
+                    "bmj_token",
+                    user.token
+                );
+
+
+                localStorage.setItem(
+                    "token",
+                    user.token
+                );
+            }
+
+
+            /* =============================================
+               LISTE LOCALE DES UTILISATEURS
+            ============================================== */
+
+            try {
+
+                let users =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "bmj_users_list"
+                        ) || "[]"
+                    );
+
+
+                if (
+                    !Array.isArray(users)
+                ) {
+
+                    users = [];
+                }
+
+
+                const index =
+                    users.findIndex(
+                        function(item) {
+
+                            if (!item) {
+                                return false;
+                            }
+
+
+                            if (
+                                user.id !== null &&
+                                user.id !== undefined &&
+                                String(item.id) ===
+                                String(user.id)
+                            ) {
+
+                                return true;
+                            }
+
+
+                            if (
+                                user.email &&
+                                item.email
+                            ) {
+
+                                return (
+                                    String(
+                                        item.email
+                                    ).toLowerCase() ===
+                                    String(
+                                        user.email
+                                    ).toLowerCase()
+                                );
+                            }
+
+
+                            return false;
+                        }
+                    );
+
+
+                if (
+                    index >= 0
+                ) {
+
+                    users[index] = {
+                        ...users[index],
+                        ...user
+                    };
+
+                } else {
+
+                    users.push(user);
+                }
+
+
+                localStorage.setItem(
+                    "bmj_users_list",
+                    JSON.stringify(users)
+                );
+
+            } catch (
+                listeError
+            ) {
+
+                console.warn(
+                    "Impossible de mettre à jour bmj_users_list :",
+                    listeError
+                );
+            }
+
+
+            return true;
+
+        } catch (
+            storageError
+        ) {
+
+            console.error(
+                "Erreur lors de la création de la session :",
+                storageError
+            );
+
+
+            return false;
+        }
+    }
+
+
+    /* =====================================================
+       ACTIVER CHARGEMENT
+    ====================================================== */
+
+    function activerChargement() {
+
+        if (!btnConnexion) {
+            return;
+        }
+
+
+        btnConnexion.disabled =
+            true;
+
+
+        btnConnexion.innerHTML = `
+            <span class="spinner"></span>
+            Connexion...
+        `;
+    }
+
+
+    /* =====================================================
+       DESACTIVER CHARGEMENT
+    ====================================================== */
+
+    function desactiverChargement() {
+
+        if (!btnConnexion) {
+            return;
+        }
+
+
+        btnConnexion.disabled =
+            false;
+
+
+        btnConnexion.innerHTML = `
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <span id="buttonText">
+                Se connecter
+            </span>
+        `;
+    }
+
+
+    /* =====================================================
+       AFFICHER / MASQUER MOT DE PASSE
+    ====================================================== */
+
+    if (
+        passwordToggle
+    ) {
+
+        passwordToggle.addEventListener(
+            "click",
+            function(event) {
+
+                event.preventDefault();
+
+
+                if (!password) {
+                    return;
+                }
+
+
+                if (
+                    password.type ===
+                    "password"
+                ) {
+
+                    password.type =
+                        "text";
+
+
+                    if (
+                        passwordIcon
+                    ) {
+
+                        passwordIcon.className =
+                            "fa-solid fa-eye-slash";
+                    }
+
+
+                    passwordToggle.setAttribute(
+                        "aria-label",
+                        "Masquer le mot de passe"
+                    );
+
+                } else {
+
+                    password.type =
+                        "password";
+
+
+                    if (
+                        passwordIcon
+                    ) {
+
+                        passwordIcon.className =
+                            "fa-solid fa-eye";
+                    }
+
+
+                    passwordToggle.setAttribute(
+                        "aria-label",
+                        "Afficher le mot de passe"
+                    );
+                }
+            }
+        );
+    }
+
+
+    /* =====================================================
+       CONNEXION UTILISATEUR
+    ====================================================== */
+
+    if (
+        loginForm
+    ) {
+
+        loginForm.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+
+                if (
+                    connexionEnCours
+                ) {
+
+                    return;
+                }
+
+
+                cacherMessage();
+
+
+                const email =
+                    identifiant
+                        ? identifiant.value.trim()
+                        : "";
+
+
+                const motDePasse =
+                    password
+                        ? password.value
+                        : "";
+
+
+                /* =========================================
+                   VALIDATION EMAIL
+                ========================================== */
+
+                if (!email) {
+
+                    afficherMessage(
+                        "Veuillez saisir votre adresse e-mail.",
+                        "error"
+                    );
+
+
+                    if (
+                        identifiant
+                    ) {
+
+                        identifiant.focus();
+                    }
+
+
+                    return;
+                }
+
+
+                if (
+                    !email.includes("@")
+                ) {
+
+                    afficherMessage(
+                        "Veuillez saisir une adresse e-mail valide.",
+                        "error"
+                    );
+
+
+                    if (
+                        identifiant
+                    ) {
+
+                        identifiant.focus();
+                    }
+
+
+                    return;
+                }
+
+
+                /* =========================================
+                   VALIDATION MOT DE PASSE
+                ========================================== */
+
+                if (
+                    !motDePasse
+                ) {
+
+                    afficherMessage(
+                        "Veuillez saisir votre mot de passe.",
+                        "error"
+                    );
+
+
+                    if (
+                        password
+                    ) {
+
+                        password.focus();
+                    }
+
+
+                    return;
+                }
+
+
+                /* =========================================
+                   DEBUT CONNEXION
+                ========================================== */
+
+                connexionEnCours =
+                    true;
+
+
+                activerChargement();
+
+
+                try {
+
+                    afficherMessage(
+                        "Connexion au serveur...",
+                        "info"
+                    );
+
+
+                    /* =====================================
+                       CONTROLE RENDER
+                    ====================================== */
+
+                    const controller =
+                        new AbortController();
+
+
+                    const timeout =
+                        setTimeout(
+                            function() {
+
+                                controller.abort();
+
+                            },
+                            60000
+                        );
+
+
+                    /* =====================================
+                       REQUETE API
+                    ====================================== */
+
+                    const response =
+                        await fetch(
+                            CONNEXION_URL,
+                            {
+                                method: "POST",
+
+                                headers: {
+                                    "Content-Type":
+                                        "application/json",
+
+                                    "Accept":
+                                        "application/json"
+                                },
+
+                                body:
+                                    JSON.stringify({
+
+                                        email:
+                                            email,
+
+                                        identifiant:
+                                            email,
+
+                                        username:
+                                            email,
+
+                                        password:
+                                            motDePasse
+                                    }),
+
+                                signal:
+                                    controller.signal
+                            }
+                        );
+
+
+                    clearTimeout(
+                        timeout
+                    );
+
+
+                    /* =====================================
+                       LIRE REPONSE
+                    ====================================== */
+
+                    const texte =
+                        await response.text();
+
+
+                    let result =
+                        null;
+
+
+                    try {
+
+                        result =
+                            texte
+                                ? JSON.parse(texte)
+                                : null;
+
+                    } catch (
+                        jsonError
+                    ) {
+
+                        console.error(
+                            "Réponse serveur non JSON :",
+                            texte
+                        );
+                    }
+
+
+                    console.log(
+                        "Réponse HTTP :",
+                        response.status
+                    );
+
+
+                    console.log(
+                        "Réponse API :",
+                        result
+                    );
+
+
+                    /* =====================================
+                       ERREUR HTTP
+                    ====================================== */
+
+                    if (
+                        !response.ok
+                    ) {
+
+                        let erreur =
+                            "";
+
+
+                        if (
+                            result &&
+                            typeof result === "object"
+                        ) {
+
+                            erreur =
+                                result.message ||
+                                result.error ||
+                                result.details ||
+                                "";
+                        }
+
+
+                        if (
+                            response.status ===
+                            400
+                        ) {
+
+                            erreur =
+                                erreur ||
+                                "Les informations envoyées sont incorrectes.";
+                        }
+
+
+                        if (
+                            response.status ===
+                            401
+                        ) {
+
+                            erreur =
+                                erreur ||
+                                "Adresse e-mail ou mot de passe incorrect.";
+                        }
+
+
+                        if (
+                            response.status ===
+                            403
+                        ) {
+
+                            erreur =
+                                erreur ||
+                                "Ce compte a été bloqué par l'administration.";
+                        }
+
+
+                        if (
+                            response.status ===
+                            404
+                        ) {
+
+                            erreur =
+                                erreur ||
+                                "Aucun compte ne correspond à cette adresse e-mail.";
+                        }
+
+
+                        if (
+                            response.status >=
+                            500
+                        ) {
+
+                            erreur =
+                                erreur ||
+                                "Le serveur rencontre actuellement un problème. Veuillez réessayer dans quelques instants.";
+                        }
+
+
+                        throw new Error(
+                            erreur ||
+                            "Erreur serveur HTTP " +
+                            response.status +
+                            "."
+                        );
+                    }
+
+
+                    /* =====================================
+                       VERIFIER SUCCESS
+                    ====================================== */
+
+                    if (
+                        !result ||
+                        result.success !== true
+                    ) {
+
+                        throw new Error(
+                            result?.message ||
+                            result?.error ||
+                            "Adresse e-mail ou mot de passe incorrect."
+                        );
+                    }
+
+
+                    /* =====================================
+                       RECUPERER UTILISATEUR
+                    ====================================== */
+
+                    let utilisateur =
+                        result.user ||
+                        result.utilisateur ||
+                        result.data ||
+                        null;
+
+
+                    if (
+                        utilisateur &&
+                        typeof utilisateur ===
+                        "object"
+                    ) {
+
+                        if (
+                            utilisateur.user &&
+                            typeof utilisateur.user ===
+                            "object"
+                        ) {
+
+                            utilisateur =
+                                utilisateur.user;
+                        }
+
+
+                        if (
+                            utilisateur.utilisateur &&
+                            typeof utilisateur.utilisateur ===
+                            "object"
+                        ) {
+
+                            utilisateur =
+                                utilisateur.utilisateur;
+                        }
+                    }
+
+
+                    if (
+                        !utilisateur ||
+                        typeof utilisateur !==
+                        "object"
+                    ) {
+
+                        throw new Error(
+                            "Le serveur n'a pas retourné les informations de votre compte."
+                        );
+                    }
+
+
+                    /* =====================================
+                       TOKEN EVENTUEL
+                    ====================================== */
+
+                    if (
+                        result.token
+                    ) {
+
+                        utilisateur.token =
+                            result.token;
+                    }
+
+
+                    if (
+                        result.access_token
+                    ) {
+
+                        utilisateur.token =
+                            result.access_token;
+                    }
+
+
+                    if (
+                        result.data &&
+                        typeof result.data ===
+                        "object"
+                    ) {
+
+                        if (
+                            result.data.token
+                        ) {
+
+                            utilisateur.token =
+                                result.data.token;
+                        }
+
+
+                        if (
+                            result.data.access_token
+                        ) {
+
+                            utilisateur.token =
+                                result.data.access_token;
+                        }
+                    }
+
+
+                    /* =====================================
+                       NORMALISER UTILISATEUR
+                    ====================================== */
+
+                    utilisateur =
+                        normaliserUtilisateur(
+                            utilisateur
+                        );
+
+
+                    if (
+                        !utilisateur
+                    ) {
+
+                        throw new Error(
+                            "Les informations utilisateur reçues du serveur sont invalides."
+                        );
+                    }
+
+
+                    /* =====================================
+                       COMPTE BLOQUE
+                    ====================================== */
+
+                    if (
+                        utilisateur.is_blocked ||
+                        utilisateur.blocked
+                    ) {
+
+                        throw new Error(
+                            "Ce compte a été bloqué par l'administration."
+                        );
+                    }
+
+
+                    /* =====================================
+                       VERIFICATION COMPTE
+                    ====================================== */
+
+                    if (
+                        !utilisateur.id &&
+                        !utilisateur.email
+                    ) {
+
+                        throw new Error(
+                            "Le compte reçu du serveur est incomplet."
+                        );
+                    }
+
+
+                    /* =====================================
+                       CREER SESSION
+                    ====================================== */
+
+                    const sessionOK =
+                        creerSessionBMJ(
+                            utilisateur
+                        );
+
+
+                    if (
+                        !sessionOK
+                    ) {
+
+                        throw new Error(
+                            "Impossible de créer votre session utilisateur sur cet appareil."
+                        );
+                    }
+
+
+                    /* =====================================
+                       SUCCES
+                    ====================================== */
+
+                    afficherMessage(
+                        "Connexion réussie. Redirection vers votre espace...",
+                        "success"
+                    );
+
+
+                    console.log(
+                        "BMJ SERVICE : connexion réussie."
+                    );
+
+
+                    /* =====================================
+                       REDIRECTION
+                    ====================================== */
+
+                    setTimeout(
+                        function() {
+
+                            window.location.replace(
+                                DASHBOARD_URL
+                            );
+
+                        },
+                        700
+                    );
+
+
+                } catch (
+                    error
+                ) {
+
+                    console.error(
+                        "Erreur connexion BMJ SERVICE :",
+                        error
+                    );
+
+
+                    let messageErreur =
+                        "Impossible de contacter le serveur.";
+
+
+                    if (
+                        error &&
+                        error.name ===
+                        "AbortError"
+                    ) {
+
+                        messageErreur =
+                            "Le serveur met trop de temps à répondre. Il est peut-être en train de démarrer. Veuillez réessayer.";
+                    }
+
+                    else if (
+                        error &&
+                        error.message
+                    ) {
+
+                        messageErreur =
+                            error.message;
+                    }
+
+
+                    afficherMessage(
+                        messageErreur,
+                        "error"
+                    );
+
+
+                    desactiverChargement();
+
+
+                } finally {
+
+                    connexionEnCours =
+                        false;
+                }
+
+            }
+        );
+    }
+
+
+    /* =====================================================
+       EFFACER LES ERREURS PENDANT LA SAISIE
+    ====================================================== */
+
+    if (
+        identifiant
+    ) {
+
+        identifiant.addEventListener(
+            "input",
+            function() {
+
+                if (
+                    message &&
+                    message.classList.contains(
+                        "error"
+                    )
+                ) {
+
+                    cacherMessage();
+                }
+            }
+        );
+    }
+
+
+    if (
+        password
+    ) {
+
+        password.addEventListener(
+            "input",
+            function() {
+
+                if (
+                    message &&
+                    message.classList.contains(
+                        "error"
+                    )
+                ) {
+
+                    cacherMessage();
+                }
+            }
+        );
+    }
+
+
+    /* =====================================================
+       SE SOUVENIR DE MOI
+    ====================================================== */
+
+    if (
+        remember
+    ) {
+
+        try {
+
+            const savedEmail =
+                localStorage.getItem(
+                    "bmj_saved_email"
+                );
+
+
+            if (
+                savedEmail
+            ) {
+
+                identifiant.value =
+                    savedEmail;
+
+                remember.checked =
+                    true;
+            }
+
+        } catch (
+            error
+        ) {
+
+            console.warn(
+                "Impossible de récupérer l'e-mail mémorisé :",
+                error
+            );
+        }
+    }
+
+
+    /* =====================================================
+       MEMORISER L'EMAIL APRES CONNEXION
+    ====================================================== */
+
+    if (
+        loginForm
+    ) {
+
+        loginForm.addEventListener(
+            "submit",
+            function() {
+
+                try {
+
+                    if (
+                        remember &&
+                        remember.checked &&
+                        identifiant &&
+                        identifiant.value.trim()
+                    ) {
+
+                        localStorage.setItem(
+                            "bmj_saved_email",
+                            identifiant.value.trim()
+                        );
+
+                    } else {
+
+                        localStorage.removeItem(
+                            "bmj_saved_email"
+                        );
+                    }
+
+                } catch (
+                    error
+                ) {
+
+                    console.warn(
+                        "Impossible de mémoriser l'e-mail :",
+                        error
+                    );
+                }
+
+            },
+            true
+        );
+    }
+
+
+    /* =====================================================
+       AUCUNE CONNEXION AUTOMATIQUE
+       
+       IMPORTANT :
+       
+       Cette page NE fait PAS :
+       
+       - vérifier automatiquement bmj_session
+       - connecter automatiquement
+       - rediriger automatiquement
+       - utiliser la session administrateur
+       
+       La connexion commence uniquement lorsque
+       l'utilisateur valide le formulaire.
+    ====================================================== */
+
+
+    /* =====================================================
+       MESSAGE CONSOLE
+    ====================================================== */
+
+    console.log(
+        "BMJ SERVICE - Page connexion chargée."
+    );
+
+
+    console.log(
+        "API connexion :",
+        CONNEXION_URL
+    );
+
+</script>
