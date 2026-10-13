@@ -1,0 +1,1 @@
+{"success":true,"exit_code":0,"output":"Auth response: 200 {\"data\":{\"me\":{\"name\":null,\"email\":\"faustinpataule12@gmail.com\"}}}\n\n","createdFiles":["deploy_railway.py"]}
