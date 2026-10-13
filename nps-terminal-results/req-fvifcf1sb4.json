@@ -1,0 +1,1 @@
+{"success":true,"exit_code":0,"output":"Project Create Response: 200 {\"errors\":[{\"message\":\"You must specify a workspaceId to create a project\",\"locations\":[{\"line\":1,\"column\":12}],\"path\":[\"projectCreate\"],\"extensions\":{\"code\":\"BAD_USER_INPUT\"},\"traceId\":\"8378177828241640808\"}],\"data\":null}\n\n","createdFiles":["create_project.py"]}
