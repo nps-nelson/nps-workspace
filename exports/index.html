@@ -3,56 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NPS Video Agent - Agent Intelligent</title>
+    <title>NPS Video Agent - Agent Intelligent de Téléchargement</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
-    <header class="border-b border-slate-800 bg-slate-900/50 p-4 flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center font-bold text-xl">N</div>
-            <div>
-                <h1 class="font-bold text-lg">NPS Video Agent</h1>
-                <p class="text-xs text-slate-400">Agent de Téléchargement Multi-Sources</p>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans">
+    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                    <i data-lucide="bot" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg tracking-tight">NPS Video Agent</h1>
+                    <p class="text-xs text-slate-400">Agent Autonome & Multi-Sources</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <button id="btn-settings" class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 hover:text-white transition shadow-sm flex items-center space-x-2">
+                    <i data-lucide="settings" class="w-5 h-5"></i>
+                    <span class="text-sm font-medium hidden sm:inline">Paramètres API</span>
+                </button>
             </div>
         </div>
-        <button onclick="document.getElementById('modal-settings').classList.toggle('hidden')" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-xl text-sm font-medium flex items-center space-x-2">
-            <i data-lucide="settings" class="w-4 h-4"></i>
-            <span>Paramètres API</span>
-        </button>
     </header>
-    <main class="flex-1 max-w-4xl mx-auto w-full p-6 space-y-6">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
-            <h2 class="text-xl font-bold mb-4">Télécharger une vidéo</h2>
-            <div class="flex gap-3">
-                <input type="text" id="url-input" placeholder="Collez le lien de la vidéo (TikTok, etc.)..." class="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-500">
-                <button onclick="alert('Agent prêt ! Utilisez vos clés configurées.')" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 font-medium rounded-xl transition shadow-lg shadow-indigo-600/30">Lancer</button>
+    <main class="max-w-7xl mx-auto px-4 py-8 flex-1 w-full flex flex-col gap-8">
+        <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+            <h2 class="text-xl font-bold mb-4 flex items-center gap-2"><i data-lucide="download" class="text-indigo-400"></i> Télécharger une Vidéo</h2>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <input type="text" id="url-input" placeholder="Collez le lien de la vidéo (TikTok, YouTube, etc.)..." class="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 focus:outline-none focus:border-indigo-500 transition">
+                <button id="btn-download" class="bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-6 py-3 rounded-xl transition shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i> Lancer l'Agent
+                </button>
             </div>
-        </div>
+        </section>
     </main>
-    <div id="modal-settings" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 w-full max-w-md space-y-4">
-            <div class="flex justify-between items-center">
-                <h3 class="text-lg font-bold">Configuration des Clés API</h3>
-                <button onclick="document.getElementById('modal-settings').classList.add('hidden')" class="text-slate-400 hover:text-white">✕</button>
+    <!-- Modal Paramètres -->
+    <div id="modal-settings" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 shadow-2xl relative">
+            <button id="btn-close-settings" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><i data-lucide="key" class="text-indigo-400"></i> Configuration des Clés API</h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Token GitHub (Terminal / Dépôt)</label>
+                    <input type="password" id="api-github" placeholder="ghp_..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 text-sm focus:outline-none focus:border-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Clé API Gemini</label>
+                    <input type="password" id="api-gemini" placeholder="AIza..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 text-sm focus:outline-none focus:border-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Clé API Jina Reader</label>
+                    <input type="password" id="api-jina" placeholder="jina_..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 text-sm focus:outline-none focus:border-indigo-500">
+                </div>
+                <button id="btn-save-settings" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 rounded-xl transition shadow-lg">Enregistrer</button>
             </div>
-            <div class="space-y-3">
-                <div>
-                    <label class="text-xs text-slate-400 block mb-1">Token GitHub (Terminal / Actions)</label>
-                    <input type="password" id="cfg-github" placeholder="ghp_..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm">
-                </div>
-                <div>
-                    <label class="text-xs text-slate-400 block mb-1">Clé API Gemini</label>
-                    <input type="password" id="cfg-gemini" placeholder="AIza..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm">
-                </div>
-                <div>
-                    <label class="text-xs text-slate-400 block mb-1">Clé API Jina Reader</label>
-                    <input type="password" id="cfg-jina" placeholder="jina_..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm">
-                </div>
-            </div>
-            <button onclick="alert('Paramètres enregistrés avec succès !'); document.getElementById('modal-settings').classList.add('hidden');" class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-medium text-sm">Enregistrer</button>
         </div>
     </div>
-    <script>lucide.createIcons();</script>
+    <script>
+        lucide.createIcons();
+        const modal = document.getElementById('modal-settings');
+        document.getElementById('btn-settings').onclick = () => modal.classList.remove('hidden');
+        document.getElementById('btn-close-settings').onclick = () => modal.classList.add('hidden');
+        document.getElementById('btn-save-settings').onclick = () => {
+            localStorage.setItem('github_token', document.getElementById('api-github').value);
+            localStorage.setItem('gemini_key', document.getElementById('api-gemini').value);
+            localStorage.setItem('jina_key', document.getElementById('api-jina').value);
+            modal.classList.add('hidden');
+            alert('Paramètres enregistrés avec succès !');
+        };
+    </script>
 </body>
 </html>
