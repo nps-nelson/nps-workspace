@@ -1,0 +1,1 @@
+{"success":false,"exit_code":1,"output":"  File \"<string>\", line 1\n    import yt_dlp; ydl_opts={'outtmpl': 'video_pfyes.mp4', 'quiet': True}; with yt_dlp.YoutubeDL(ydl_opts) as ydl: ydl.download(['https://vm.tiktok.com/ZSgePFYes/'])\n                                                                           ^^^^\nSyntaxError: invalid syntax\n","createdFiles":[]}
