@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Couper une Musique [HQ] - Éditeur audio en ligne</title>
+    <style>
+      html {
+        background: #17171e
+      }
+    </style>
+    <script type="module" crossorigin src="../assets/index-984f238b.js"></script>
+    <link rel="stylesheet" href="../assets/style-94964cad.css">
+    <script type="module">
+      import.meta.url;
+      import("_").catch(() => 1);
+      async function* g() {};
+      window.__vite_is_modern_browser = true;
+    </script>
+    <script type="module">
+      ! function() {
+        if (window.__vite_is_modern_browser) return;
+        console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");
+        var e = document.getElementById("vite-legacy-polyfill"),
+          n = document.createElement("script");
+        n.src = e.src, n.onload = function() {
+          System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))
+        }, document.body.appendChild(n)
+      }();
+    </script>
+    <meta name="description" content="L'éditeur audio en ligne permet de découper ou de couper des fichiers audio MP3, WAV, FLAC, AAC. Cet outil vous permet de faire en sorte que votre piste audio soit fondue en entrée et en sortie de manière fluide.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vocalremover.org/fr/cutter">
+    <meta property="og:title" content="Couper une Musique">
+    <meta property="og:description" content="Éditeur gratuit pour découper et couper n'importe quel fichier audio en ligne">
+    <meta property="og:image" content="https://vocalremover.org/img/cutter/player@2x.jpg">
+    <link rel="canonical" href="cutter.html">
+    <link rel="alternate" hreflang="ar" href="https://vocalremover.org/ar/cutter">
+    <link rel="alternate" hreflang="bg" href="https://vocalremover.org/bg/cutter">
+    <link rel="alternate" hreflang="cs" href="https://vocalremover.org/cs/cutter">
+    <link rel="alternate" hreflang="da" href="https://vocalremover.org/da/cutter">
+    <link rel="alternate" hreflang="de" href="https://vocalremover.org/de/cutter">
+    <link rel="alternate" hreflang="el" href="https://vocalremover.org/el/cutter">
+    <link rel="alternate" hreflang="en" href="https://vocalremover.org/cutter">
+    <link rel="alternate" hreflang="es" href="https://vocalremover.org/es/cutter">
+    <link rel="alternate" hreflang="et" href="https://vocalremover.org/et/cutter">
+    <link rel="alternate" hreflang="fi" href="https://vocalremover.org/fi/cutter">
+    <link rel="alternate" hreflang="fr" href="cutter.html">
+    <link rel="alternate" hreflang="he" href="https://vocalremover.org/he/cutter">
+    <link rel="alternate" hreflang="hi" href="https://vocalremover.org/hi/cutter">
+    <link rel="alternate" hreflang="hu" href="https://vocalremover.org/hu/cutter">
+    <link rel="alternate" hreflang="id" href="https://vocalremover.org/id/cutter">
+    <link rel="alternate" hreflang="it" href="https://vocalremover.org/it/cutter">
+    <link rel="alternate" hreflang="ja" href="https://vocalremover.org/ja/cutter">
+    <link rel="alternate" hreflang="ko" href="https://vocalremover.org/ko/cutter">
+    <link rel="alternate" hreflang="lt" href="https://vocalremover.org/lt/cutter">
+    <link rel="alternate" hreflang="lv" href="https://vocalremover.org/lv/cutter">
+    <link rel="alternate" hreflang="nb" href="https://vocalremover.org/nb/cutter">
+    <link rel="alternate" hreflang="nl" href="https://vocalremover.org/nl/cutter">
+    <link rel="alternate" hreflang="pl" href="https://vocalremover.org/pl/cutter">
+    <link rel="alternate" hreflang="pt" href="https://vocalremover.org/pt/cutter">
+    <link rel="alternate" hreflang="ro" href="https://vocalremover.org/ro/cutter">
+    <link rel="alternate" hreflang="ru" href="https://vocalremover.org/ru/cutter">
+    <link rel="alternate" hreflang="sk" href="https://vocalremover.org/sk/cutter">
+    <link rel="alternate" hreflang="sl" href="https://vocalremover.org/sl/cutter">
+    <link rel="alternate" hreflang="sv" href="https://vocalremover.org/sv/cutter">
+    <link rel="alternate" hreflang="th" href="https://vocalremover.org/th/cutter">
+    <link rel="alternate" hreflang="tr" href="https://vocalremover.org/tr/cutter">
+    <link rel="alternate" hreflang="uk" href="https://vocalremover.org/uk/cutter">
+    <link rel="alternate" hreflang="vi" href="https://vocalremover.org/vi/cutter">
+    <link rel="alternate" hreflang="zh" href="https://vocalremover.org/zh/cutter">
+    <link rel="alternate" hreflang="x-default" href="https://vocalremover.org/cutter">
+  </head>
+
+  <body>
+    <div id="app">
+      <nav class="bar">
+        <div class="tools"><a href="index.html" class="router-link-active"><svg aria-hidden="true" width="2.5em" height="1.7em" fill="currentColor" stroke="">
+              <use xlink:href="#icon-menu-remover"></use>
+            </svg> Suppression de la voix</a><a href="splitter-ai.html" class=""><svg aria-hidden="true" width="2.5em" height="1.7em" fill="currentColor" stroke="">
+              <use xlink:href="#icon-menu-splitter"></use>
+            </svg> Séparateur</a><a href="pitch.html" class=""><svg aria-hidden="true" width="2.5em" height="1.7em" fill="currentColor" stroke="">
+              <use xlink:href="#icon-menu-pitch"></use>
+            </svg> Changer la tonalité</a><a href="key-bpm-finder.html" class=""><svg aria-hidden="true" width="2.5em" height="1.7em" fill="currentColor" stroke="">
+              <use xlink:href="#icon-menu-bpm"></use>
+            </svg> Key BPM Finder</a><a href="cutter.html" class="router-link-active router-link-exact-active" aria-current="page"><svg aria-hidden="true" width="2.5em" height="1.7em" fill="currentColor" stroke="">
+              <use xlink:href="#icon-menu-cutter"></use>
+            </svg> Couper</a><a href="joiner.html" class=""><svg aria-hidden="true" width="2.5em" height="1.7em" fill="currentColor" stroke="">
+              <use xlink:href="#icon-menu-joiner"></use>
+            </svg> Fusionneur</a><a href="voice-recorder.html" class=""><svg aria-hidden="true" width="2.5em" height="1.7em" fill="currentColor" stroke="">
+              <use xlink:href="#icon-menu-recorder"></use>
+            </svg> Enregistreur</a><a href="karaoke.html" class=""><svg aria-hidden="true" width="2.5em" height="1.7em" fill="currentColor" stroke="">
+              <use xlink:href="#icon-menu-karaoke"></use>
+            </svg> Karaoké</a></div>
+        <div class="help"><a href="support.html" class=""><svg aria-hidden="true" width="1.75em" height="1.75em" fill="currentColor" stroke="currentColor">
+              <use xlink:href="#icon-menu-help"></use>
+            </svg>
+            <div class="t">Aide</div>
+          </a><button class="link"><svg aria-hidden="true" width="2em" height="2em" fill="currentColor" stroke="">
+              <use xlink:href="#icon-flag-fr_FR"></use>
+            </svg></button></div>
+      </nav>
+      <main data-v-d335a5bf="" data-v-da06829f="" class="pages">
+        <div data-v-d335a5bf="" class="page centered">
+          <div data-v-d335a5bf="" class="top-menu">
+            <menu data-v-d335a5bf="">
+              <li data-v-d335a5bf=""><a data-v-d335a5bf="">Comment cela fonctionne</a></li>
+              <li data-v-da06829f=""><a data-v-da06829f="" href="joiner.html" class="">Fusionneur</a></li>
+            </menu>
+          </div>
+          <h1 data-v-d335a5bf="">Couper une Musique</h1>
+          <h3 data-v-d335a5bf="">Éditeur gratuit pour découper et couper n'importe quel fichier audio en ligne</h3><input hidden="" type="file" accept=".wav,.mp3,.aac,.ogg,.wma,.flac,.alac,.aiff,audio/*"><button class="upload">Choisir le fichier</button>
+        </div>
+        <div data-v-d335a5bf="" class="page info">
+          <h2 data-v-d335a5bf="">Comment faire pour couper une musique</h2>
+          <p data-v-d335a5bf="">Cette application peut être utilisée pour découper et/ou couper des pistes audio, supprimer un fragment audio. Fade in et fade out votre musique facilement pour rendre l'audio harmonieusement.<br><br>Il rapide et facile à utiliser. Vous pouvez enregistrer le fichier audio dans n'importe quel format (les paramètres du codec sont configurés)<br><br>Il fonctionne directement dans le navigateur, pas besoin d'installer un logiciel, est disponible pour les appareils mobiles.</p>
+          <h4 data-v-d335a5bf=""><svg data-v-d335a5bf="" aria-hidden="true" width="1em" height="1em" fill="currentColor" stroke="currentColor">
+              <use xlink:href="#icon-security"></use>
+            </svg>Confidentialité et sécurité garanties</h4>
+          <p data-v-d335a5bf="">C'est une application sans serveur. Vos fichiers ne quittent pas votre appareil</p>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      var features = [];
+      if (!window.Array.prototype.at) features.push('Array.prototype.at');
+      if (!window.Object.fromEntries) features.push('Object.fromEntries');
+      if (!window.ResizeObserver) features.push('ResizeObserver');
+      if (!window.IntersectionObserver) features.push('IntersectionObserver');
+      if (!window.matchMedia) features.push('matchMedia');
+      if (!window.devicePixelRatio) features.push('devicePixelRatio');
+      if (!window.Intl || !window.Intl.DisplayNames) features.push('Intl.DisplayNames.~locale.en');
+      if (!window.Element || !window.Element.prototype.scrollIntoView) features.push('scrollIntoView');
+
+      var url = 'https://polyfill.io/v3/polyfill.min.js?version=3.111.0&features=' + features.join(',');
+      if (features.length > 0) {
+        document.write('<script src="https://vocalremover.org/fr/'&#32;+&#32;url&#32;+&#32;'"></scr' + 'ipt>')
+      }
+    </script>
+    <script nomodule>
+      ! function() {
+        var e = document,
+          t = e.createElement("script");
+        if (!("noModule" in t) && "onbeforeload" in t) {
+          var n = !1;
+          e.addEventListener("beforeload", (function(e) {
+            if (e.target === t) n = !0;
+            else if (!e.target.hasAttribute("nomodule") || !n) return;
+            e.preventDefault()
+          }), !0), t.type = "module", t.src = ".", e.head.appendChild(t), t.remove()
+        }
+      }();
+    </script>
+    <script nomodule crossorigin id="vite-legacy-polyfill" src="../assets/polyfills-legacy-60d49127.js"></script>
+    <script nomodule crossorigin id="vite-legacy-entry" data-src="/assets/index-legacy-8ee65d5c.js">
+      System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))
+    </script>
+  </body>
+
+</html>
