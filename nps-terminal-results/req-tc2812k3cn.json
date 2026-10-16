@@ -1,0 +1,1 @@
+{"success":false,"exit_code":1,"output":"  File \"<string>\", line 14\n    print(f\"Nickname: {v.get(\\\"nickname\\\")}\")\n                              ^\nSyntaxError: unexpected character after line continuation character\n","createdFiles":[]}
