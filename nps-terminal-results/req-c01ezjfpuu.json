@@ -1,0 +1,1 @@
+{"success":false,"exit_code":128,"output":"Cloning into '/tmp/deploy_fable'...\n[main 41ed225] Mise à jour complète Fable Fast v4\n 1 file changed, 11 insertions(+), 45 deletions(-)\nremote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/nps-nelson/fable-fast.git/'\n","createdFiles":[]}
