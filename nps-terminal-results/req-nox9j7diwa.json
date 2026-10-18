@@ -1,0 +1,1 @@
+{"success":false,"exit_code":1,"output":"Cloning into '/tmp/deploy_pages'...\nAlready on 'main'\nYour branch is up to date with 'origin/main'.\ncp: cannot stat '/home/user/nps-workspace/index.html': No such file or directory\nindex present\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nnothing to commit, working tree clean\n","createdFiles":[]}
